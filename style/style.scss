@@ -143,6 +143,9 @@ body {
             // background-color: $attenuate-color;
             vertical-align: middle;
         }
+        i {
+            width: 35px;
+        }
     }
 
     .skills-container, .language-container, .hobbies-container {
@@ -154,6 +157,10 @@ body {
             margin: -5px 0 15px;
             // background-color: $attenuate-color;
             border-bottom: 1px solid $color-border;
+            i {
+                width: 35px;
+                font-size: 2.2rem;
+            }
         }
 
         .skill, .language, .hobby {
@@ -174,6 +181,9 @@ body {
                     @include gradient-background;
                 }
             }
+            i {
+                width: 35px;
+            }
         }
     }
 }
@@ -187,6 +197,10 @@ body {
     .main-title-right {
         font-size: 3rem;
         font-family: 600;
+        i {
+            width: 50px;
+            font-size: 2.5rem;
+        }
     }
 
     .work-container, .formation-container {
@@ -207,6 +221,9 @@ body {
         }
         p {
             font-size: 1.5rem;
+        }
+        i {
+            width: 30px;
         }
     }
 }

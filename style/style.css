@@ -157,12 +157,21 @@ body {
   vertical-align: middle;
 }
 
+.profile-section .personal-data i {
+  width: 35px;
+}
+
 .profile-section .skills-container .main-title-left, .profile-section .language-container .main-title-left, .profile-section .hobbies-container .main-title-left {
   font-size: 2.1rem;
   font-weight: 600;
   padding: 12px 0;
   margin: -5px 0 15px;
   border-bottom: 1px solid #312D3C;
+}
+
+.profile-section .skills-container .main-title-left i, .profile-section .language-container .main-title-left i, .profile-section .hobbies-container .main-title-left i {
+  width: 35px;
+  font-size: 2.2rem;
 }
 
 .profile-section .skills-container .skill, .profile-section .skills-container .language, .profile-section .skills-container .hobby, .profile-section .language-container .skill, .profile-section .language-container .language, .profile-section .language-container .hobby, .profile-section .hobbies-container .skill, .profile-section .hobbies-container .language, .profile-section .hobbies-container .hobby {
@@ -184,6 +193,10 @@ body {
   background: linear-gradient(135deg, #FF5711, #E52F6F);
 }
 
+.profile-section .skills-container .skill i, .profile-section .skills-container .language i, .profile-section .skills-container .hobby i, .profile-section .language-container .skill i, .profile-section .language-container .language i, .profile-section .language-container .hobby i, .profile-section .hobbies-container .skill i, .profile-section .hobbies-container .language i, .profile-section .hobbies-container .hobby i {
+  width: 35px;
+}
+
 .work-section, .formation-section {
   width: 100%;
   padding: 3.5%;
@@ -193,6 +206,11 @@ body {
 .work-section .main-title-right, .formation-section .main-title-right {
   font-size: 3rem;
   font-family: 600;
+}
+
+.work-section .main-title-right i, .formation-section .main-title-right i {
+  width: 50px;
+  font-size: 2.5rem;
 }
 
 .work-section .work-container, .work-section .formation-container, .formation-section .work-container, .formation-section .formation-container {
@@ -218,6 +236,10 @@ body {
 
 .work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
   font-size: 1.5rem;
+}
+
+.work-section .work-container i, .work-section .formation-container i, .formation-section .work-container i, .formation-section .formation-container i {
+  width: 30px;
 }
 
 .formation-section {
