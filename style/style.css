@@ -14,7 +14,7 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: linear-gradient(135deg, #ff6f31, #d34f7d);
+  background: linear-gradient(135deg, #ff621e, #d34f7d);
 }
 
 /* Handle on hover */
@@ -52,7 +52,7 @@ h1, h2 {
 }
 
 i {
-  color: #ff6f31;
+  color: #ff621e;
 }
 
 html {
@@ -200,7 +200,7 @@ body {
   width: 80%;
   height: 100%;
   border-radius: 7.5px;
-  background: linear-gradient(135deg, #ff6f31, #d34f7d);
+  background: linear-gradient(135deg, #ff621e, #d34f7d);
 }
 
 .profile-section .skills-container .skill i, .profile-section .skills-container .language i, .profile-section .skills-container .hobby i, .profile-section .language-container .skill i, .profile-section .language-container .language i, .profile-section .language-container .hobby i, .profile-section .hobbies-container .skill i, .profile-section .hobbies-container .language i, .profile-section .hobbies-container .hobby i {
@@ -245,7 +245,7 @@ body {
 
 .work-section .work-container h1, .work-section .formation-container h1, .formation-section .work-container h1, .formation-section .formation-container h1 {
   font-size: 2.0rem;
-  color: #ff6f31;
+  color: #ff621e;
 }
 
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
