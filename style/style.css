@@ -1,85 +1,3 @@
-/* =============== FONTS =============== */
-@font-face {
-  font-family: 'KoHo';
-  src: url("../docs/font/KoHo/KoHo-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'KoHo';
-  font-weight: bold;
-  src: url("../docs/font/KoHo/KoHo-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'KoHo';
-  font-weight: 600;
-  src: url("../docs/font/KoHo/KoHo-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'KoHo';
-  font-style: italic;
-  src: url("../docs/font/KoHo/KoHo-Italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Raleway';
-  src: url("../docs/font/Raleway/Raleway-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Raleway';
-  font-style: 600;
-  src: url("../docs/font/Raleway/Raleway-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Teko';
-  src: url("../docs/font/Teko/Teko-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Cairo';
-  font-weight: normal;
-  src: url("../docs/font/Cairo/Cairo-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Cairo';
-  font-weight: 600;
-  src: url("../docs/font/Cairo/Cairo-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Saira';
-  font-weight: normal;
-  src: url("../docs/font/Saira/SairaCondensed-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'PTSans';
-  font-weight: normal;
-  src: url("../docs/font/PTSans/PTSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Titillium';
-  font-weight: normal;
-  src: url("../docs/font/Titillium/TitilliumWeb-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-weight: 600;
-  src: url("../docs/font/Poppins/Poppins-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-weight: medium;
-  src: url("../docs/font/Poppins/Poppins-Medium.ttf") format("truetype");
-}
-
 /* =============== COLORS =============== */
 /* =============== MIXINS =============== */
 /* =============== ANIMATIONS =============== */
@@ -106,7 +24,8 @@
 
 /* =============== MAIN CODE =============== */
 * {
-  font-family: "Roboto", "Titillium", "KoHo", "Arial";
+  font-family: "Titillium Web", "Roboto";
+  font-size: 1.6rem;
   padding: 0;
   margin: 0;
   text-decoration: none;
@@ -125,6 +44,11 @@
 
 * img {
   max-width: 100%;
+}
+
+h1, h2 {
+  font-family: "Saira Semi Condensed";
+  font-weight: 500;
 }
 
 html {
@@ -204,8 +128,9 @@ body {
   width: 100%;
   padding-top: 65%;
   /* same ratio picture */
+  margin-bottom: 10px;
   position: relative;
-  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  background-color: #312D3C;
 }
 
 .profile-section .frame__picture {
@@ -217,7 +142,6 @@ body {
 }
 
 .profile-section .frame__name {
-  font-weight: normal;
   font-size: 2.5rem;
   position: absolute;
   bottom: 5%;
@@ -233,12 +157,12 @@ body {
   vertical-align: middle;
 }
 
-.profile-section .skills-container .main-title, .profile-section .language-container .main-title, .profile-section .hobbies-container .main-title {
-  font-size: 2rem;
+.profile-section .skills-container .main-title-left, .profile-section .language-container .main-title-left, .profile-section .hobbies-container .main-title-left {
+  font-size: 2.1rem;
   font-weight: 600;
   padding: 12px 0;
-  margin: 0 0 15px;
-  border-bottom: 1px solid #FF5711;
+  margin: -5px 0 15px;
+  border-bottom: 1px solid #312D3C;
 }
 
 .profile-section .skills-container .skill, .profile-section .skills-container .language, .profile-section .skills-container .hobby, .profile-section .language-container .skill, .profile-section .language-container .language, .profile-section .language-container .hobby, .profile-section .hobbies-container .skill, .profile-section .hobbies-container .language, .profile-section .hobbies-container .hobby {
@@ -262,7 +186,41 @@ body {
 
 .work-section, .formation-section {
   width: 100%;
-  height: 100vh;
+  padding: 3.5%;
   background-color: #17141D;
+}
+
+.work-section .main-title-right, .formation-section .main-title-right {
+  font-size: 3rem;
+  font-family: 600;
+}
+
+.work-section .work-container, .work-section .formation-container, .formation-section .work-container, .formation-section .formation-container {
+  padding: 2.5% 0;
+  border-bottom: 1px solid #312D3C;
+}
+
+.work-section .work-container h1, .work-section .work-container h2, .work-section .work-container p, .work-section .formation-container h1, .work-section .formation-container h2, .work-section .formation-container p, .formation-section .work-container h1, .formation-section .work-container h2, .formation-section .work-container p, .formation-section .formation-container h1, .formation-section .formation-container h2, .formation-section .formation-container p {
+  display: block;
+  margin: 5px 0;
+}
+
+.work-section .work-container h1, .work-section .formation-container h1, .formation-section .work-container h1, .formation-section .formation-container h1 {
+  font-size: 2.0rem;
+  color: #FF5711;
+}
+
+.work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #E52F6F;
+}
+
+.work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
+  font-size: 1.5rem;
+}
+
+.formation-section {
+  margin-top: 2%;
 }
 /*# sourceMappingURL=style.css.map */
