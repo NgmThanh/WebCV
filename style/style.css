@@ -14,12 +14,12 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  background: linear-gradient(135deg, #ff6f31, #d34f7d);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #E52F6F;
+  background: #d34f7d;
 }
 
 /* =============== MAIN CODE =============== */
@@ -35,11 +35,11 @@
 }
 
 *::-moz-selection {
-  background-color: #f5f5f5;
+  background-color: #312D3C;
 }
 
 *::selection {
-  background-color: #f5f5f5;
+  background-color: #312D3C;
 }
 
 * img {
@@ -49,6 +49,10 @@
 h1, h2 {
   font-family: "Saira Semi Condensed";
   font-weight: 500;
+}
+
+i {
+  color: #ff6f31;
 }
 
 html {
@@ -61,6 +65,10 @@ body {
   color: #f5f5f5;
   font-weight: normal;
   padding: 2vh;
+}
+
+.fa-calendar-alt {
+  color: #d34f7d;
 }
 
 .main-container {
@@ -122,6 +130,8 @@ body {
 .profile-section {
   width: 100%;
   background-color: #17141D;
+  -webkit-box-shadow: 0px 0px 10px 2.5px #000000;
+          box-shadow: 0px 0px 10px 2.5px #000000;
 }
 
 .profile-section .frame {
@@ -190,7 +200,7 @@ body {
   width: 80%;
   height: 100%;
   border-radius: 7.5px;
-  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  background: linear-gradient(135deg, #ff6f31, #d34f7d);
 }
 
 .profile-section .skills-container .skill i, .profile-section .skills-container .language i, .profile-section .skills-container .hobby i, .profile-section .language-container .skill i, .profile-section .language-container .language i, .profile-section .language-container .hobby i, .profile-section .hobbies-container .skill i, .profile-section .hobbies-container .language i, .profile-section .hobbies-container .hobby i {
@@ -201,6 +211,16 @@ body {
   width: 100%;
   padding: 3.5%;
   background-color: #17141D;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 10px 2.5px #000000;
+          box-shadow: 0px 0px 10px 2.5px #000000;
+}
+
+.work-section .fa-adjust, .formation-section .fa-adjust {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  font-size: 2rem;
 }
 
 .work-section .main-title-right, .formation-section .main-title-right {
@@ -225,13 +245,13 @@ body {
 
 .work-section .work-container h1, .work-section .formation-container h1, .formation-section .work-container h1, .formation-section .formation-container h1 {
   font-size: 2.0rem;
-  color: #FF5711;
+  color: #ff6f31;
 }
 
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
   font-size: 1.8rem;
   font-weight: normal;
-  color: #E52F6F;
+  color: #d34f7d;
 }
 
 .work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
