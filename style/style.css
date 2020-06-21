@@ -26,12 +26,14 @@
 * {
   font-family: "Titillium Web", "Roboto";
   font-size: 1.6rem;
+  color: #f5f5f5;
   padding: 0;
   margin: 0;
   text-decoration: none;
   scroll-behavior: smooth;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  word-break: break-all;
 }
 
 *::-moz-selection {
@@ -123,10 +125,6 @@ body {
           align-items: flex-start;
 }
 
-.border-last {
-  border-bottom: 1px solid #f5f5f5;
-}
-
 .profile-section {
   width: 100%;
   background-color: #17141D;
@@ -191,9 +189,9 @@ body {
 .profile-section .skills-container .skill__bar, .profile-section .skills-container .language__bar, .profile-section .skills-container .hobby__bar, .profile-section .language-container .skill__bar, .profile-section .language-container .language__bar, .profile-section .language-container .hobby__bar, .profile-section .hobbies-container .skill__bar, .profile-section .hobbies-container .language__bar, .profile-section .hobbies-container .hobby__bar {
   width: 100%;
   height: 18px;
-  background-color: #100E17;
+  background-color: #312D3C;
   margin-top: 10px;
-  border-radius: 5px;
+  border-radius: 3px;
   -webkit-box-shadow: 0px 0px 5px 2.5px #000000;
           box-shadow: 0px 0px 5px 2.5px #000000;
 }
@@ -201,7 +199,7 @@ body {
 .profile-section .skills-container .skill__bar--inside, .profile-section .skills-container .language__bar--inside, .profile-section .skills-container .hobby__bar--inside, .profile-section .language-container .skill__bar--inside, .profile-section .language-container .language__bar--inside, .profile-section .language-container .hobby__bar--inside, .profile-section .hobbies-container .skill__bar--inside, .profile-section .hobbies-container .language__bar--inside, .profile-section .hobbies-container .hobby__bar--inside {
   width: 80%;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
   background: linear-gradient(135deg, #ff621e, #d34f7d);
   -webkit-box-shadow: 0px 0px 5px 2.5px #000000;
           box-shadow: 0px 0px 5px 2.5px #000000;
@@ -220,11 +218,15 @@ body {
           box-shadow: 0px 0px 10px 2.5px #000000;
 }
 
-.work-section .fa-adjust, .formation-section .fa-adjust {
+.work-section .fa-adjust, .work-section .fa-download, .formation-section .fa-adjust, .formation-section .fa-download {
   position: absolute;
   right: 5%;
   top: 5%;
   font-size: 2rem;
+}
+
+.work-section .fa-download, .formation-section .fa-download {
+  right: 10%;
 }
 
 .work-section .main-title-right, .formation-section .main-title-right {
@@ -252,6 +254,11 @@ body {
   color: #ff621e;
 }
 
+.work-section .work-container h1 i, .work-section .formation-container h1 i, .formation-section .work-container h1 i, .formation-section .formation-container h1 i {
+  padding: 0 10px;
+  color: #f5f5f5;
+}
+
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
   font-size: 1.8rem;
   font-weight: normal;
@@ -264,6 +271,10 @@ body {
 
 .work-section .work-container i, .work-section .formation-container i, .formation-section .work-container i, .formation-section .formation-container i {
   width: 30px;
+}
+
+.work-section .border-last, .formation-section .border-last {
+  border-bottom: 0px;
 }
 
 .formation-section {
