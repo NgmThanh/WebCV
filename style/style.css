@@ -14,12 +14,12 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: linear-gradient(135deg, #ff621e, #d34f7d);
+  background: linear-gradient(135deg, #FF5711, #e44079);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #d34f7d;
+  background: #e44079;
 }
 
 /* =============== MAIN CODE =============== */
@@ -37,11 +37,11 @@
 }
 
 *::-moz-selection {
-  background-color: #312D3C;
+  background-color: #DEE1E6;
 }
 
 *::selection {
-  background-color: #312D3C;
+  background-color: #DEE1E6;
 }
 
 * img {
@@ -54,7 +54,7 @@ h1, h2 {
 }
 
 i {
-  color: #ff621e;
+  color: #FF5711;
 }
 
 html {
@@ -70,7 +70,7 @@ body {
 }
 
 .fa-calendar-alt {
-  color: #d34f7d;
+  color: #2BAAFF;
 }
 
 .main-container {
@@ -111,7 +111,6 @@ body {
   width: 63.5%;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -200,7 +199,7 @@ body {
   width: 80%;
   height: 100%;
   border-radius: 3px;
-  background: linear-gradient(135deg, #ff621e, #d34f7d);
+  background: linear-gradient(135deg, #FF5711, #e44079);
   -webkit-box-shadow: 0px 0px 5px 2.5px #000000;
           box-shadow: 0px 0px 5px 2.5px #000000;
 }
@@ -251,7 +250,7 @@ body {
 
 .work-section .work-container h1, .work-section .formation-container h1, .formation-section .work-container h1, .formation-section .formation-container h1 {
   font-size: 2.0rem;
-  color: #ff621e;
+  color: #FF5711;
 }
 
 .work-section .work-container h1 i, .work-section .formation-container h1 i, .formation-section .work-container h1 i, .formation-section .formation-container h1 i {
@@ -262,7 +261,7 @@ body {
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
   font-size: 1.8rem;
   font-weight: normal;
-  color: #d34f7d;
+  color: #2BAAFF;
 }
 
 .work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
@@ -279,5 +278,30 @@ body {
 
 .formation-section {
   margin-top: 2%;
+}
+
+@media all and (max-width: 650px) {
+  .main-container {
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main-container .left-container {
+    width: 97.5%;
+    margin-bottom: 2%;
+  }
+  .main-container .right-container {
+    width: 97.5%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
