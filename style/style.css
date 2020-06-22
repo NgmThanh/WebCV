@@ -70,7 +70,7 @@ body {
 }
 
 .fa-calendar-alt {
-  color: #11B9FF;
+  color: #00a8ee;
 }
 
 .main-container {
@@ -268,7 +268,7 @@ body {
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
   font-size: 1.8rem;
   font-weight: normal;
-  color: #11B9FF;
+  color: #00a8ee;
 }
 
 .work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
