@@ -202,6 +202,13 @@ body {
   background: linear-gradient(135deg, #FF5711, #e44079);
   -webkit-box-shadow: 0px 0px 5px 2.5px #000000;
           box-shadow: 0px 0px 5px 2.5px #000000;
+  position: relative;
+}
+
+.profile-section .skills-container .skill__bar--inside div, .profile-section .skills-container .language__bar--inside div, .profile-section .skills-container .hobby__bar--inside div, .profile-section .language-container .skill__bar--inside div, .profile-section .language-container .language__bar--inside div, .profile-section .language-container .hobby__bar--inside div, .profile-section .hobbies-container .skill__bar--inside div, .profile-section .hobbies-container .language__bar--inside div, .profile-section .hobbies-container .hobby__bar--inside div {
+  position: absolute;
+  bottom: 27.5px;
+  right: 0%;
 }
 
 .profile-section .skills-container .skill i, .profile-section .skills-container .language i, .profile-section .skills-container .hobby i, .profile-section .language-container .skill i, .profile-section .language-container .language i, .profile-section .language-container .hobby i, .profile-section .hobbies-container .skill i, .profile-section .hobbies-container .language i, .profile-section .hobbies-container .hobby i {
