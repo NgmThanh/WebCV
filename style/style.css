@@ -100,6 +100,20 @@ body {
   cursor: pointer;
 }
 
+/* ----------- ARROW MOVE TO TOP ----------- */
+#arrow-up {
+  position: fixed;
+  bottom: 3.5%;
+  right: 3.5%;
+  z-index: 50;
+}
+
+#arrow-up i {
+  font-size: 3.5rem;
+  color: var(--accent-color);
+  text-shadow: 1px 1px var(--shadow-color);
+}
+
 .main-container {
   margin: auto;
   max-width: 1400px;
