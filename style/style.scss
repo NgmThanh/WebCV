@@ -109,6 +109,7 @@ body {
     color: var(--text-color);
     font-weight: normal;
     padding: 2vh;
+    transition: 0.5s all ease;
 }
 
 .fa-calendar-alt {
@@ -147,6 +148,7 @@ body {
     width: 100%;
     background-color: var(--primary-color);
     box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
+    transition: 0.5s all ease;
 
     .frame {
         width: 100%;
@@ -207,14 +209,14 @@ body {
                 background-color: var(--color-border);
                 margin-top: 10px;
                 border-radius: 3px;
-                box-shadow: 0px 0px 5px 2.5px var(--shadow-color);
+                box-shadow: 0px 0px 5px 1px var(--shadow-color);
 
                 &--inside {
                     width: 80%;
                     height: 100%;
                     border-radius: 3px;
                     @include gradient-background;
-                    box-shadow: 0px 0px 5px 2.5px var(--shadow-color);
+                    box-shadow: 0px 0px 5px 1px var(--shadow-color);
                     position: relative;
 
                     // percent
@@ -238,6 +240,7 @@ body {
     background-color: var(--primary-color);
     position: relative;
     box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
+    transition: 0.5s all ease;
 
     // dark / light mode
     .fa-adjust, .fa-download {
