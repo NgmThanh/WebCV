@@ -1,4 +1,15 @@
 /* =============== COLORS =============== */
+:root {
+  --background-color: #100E17;
+  --primary-color: #17141D;
+  --accent-color: #FF5711;
+  --attenuate-color: #e44079;
+  --calendar-color: #00a8ee;
+  --color-border: #312D3C;
+  --text-color: #f5f5f5;
+  --shadow-color: #000000;
+}
+
 /* =============== MIXINS =============== */
 /* =============== ANIMATIONS =============== */
 /* width */
@@ -14,19 +25,19 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: linear-gradient(135deg, #FF5711, #e44079);
+  background: linear-gradient(135deg, var(--accent-color), var(--attenuate-color));
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #e44079;
+  background: var(--attenuate-color);
 }
 
 /* =============== MAIN CODE =============== */
 * {
   font-family: "Titillium Web", "Roboto";
   font-size: 1.6rem;
-  color: #f5f5f5;
+  color: var(--text-color);
   padding: 0;
   margin: 0;
   text-decoration: none;
@@ -51,10 +62,12 @@
 h1, h2 {
   font-family: "Saira Semi Condensed";
   font-weight: 500;
+  isolation: isolate;
 }
 
 i {
-  color: #FF5711;
+  color: var(--accent-color);
+  isolation: isolate;
 }
 
 html {
@@ -63,14 +76,26 @@ html {
 
 body {
   font-size: 1.4rem;
-  background-color: #100E17;
-  color: #f5f5f5;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-weight: normal;
   padding: 2vh;
 }
 
 .fa-calendar-alt {
-  color: #00a8ee;
+  color: var(--calendar-color);
+}
+
+.switch-mode {
+  position: fixed;
+  left: 3.5%;
+  bottom: 3.5%;
+  font-size: 2rem;
+  z-index: 100;
+  padding: 5px 7px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  cursor: pointer;
 }
 
 .main-container {
@@ -126,9 +151,9 @@ body {
 
 .profile-section {
   width: 100%;
-  background-color: #17141D;
-  -webkit-box-shadow: 0px 0px 10px 2.5px #000000;
-          box-shadow: 0px 0px 10px 2.5px #000000;
+  background-color: var(--primary-color);
+  -webkit-box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
+          box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
 }
 
 .profile-section .frame {
@@ -137,7 +162,7 @@ body {
   /* same ratio picture */
   margin-bottom: 10px;
   position: relative;
-  background-color: #312D3C;
+  background-color: var(--color-border);
 }
 
 .profile-section .frame__picture {
@@ -173,7 +198,7 @@ body {
   font-weight: 600;
   padding: 12px 0;
   margin: -5px 0 15px;
-  border-bottom: 1px solid #312D3C;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .profile-section .skills-container .main-title-left i, .profile-section .language-container .main-title-left i, .profile-section .hobbies-container .main-title-left i {
@@ -188,20 +213,20 @@ body {
 .profile-section .skills-container .skill__bar, .profile-section .skills-container .language__bar, .profile-section .skills-container .hobby__bar, .profile-section .language-container .skill__bar, .profile-section .language-container .language__bar, .profile-section .language-container .hobby__bar, .profile-section .hobbies-container .skill__bar, .profile-section .hobbies-container .language__bar, .profile-section .hobbies-container .hobby__bar {
   width: 100%;
   height: 18px;
-  background-color: #312D3C;
+  background-color: var(--color-border);
   margin-top: 10px;
   border-radius: 3px;
-  -webkit-box-shadow: 0px 0px 5px 2.5px #000000;
-          box-shadow: 0px 0px 5px 2.5px #000000;
+  -webkit-box-shadow: 0px 0px 5px 2.5px var(--shadow-color);
+          box-shadow: 0px 0px 5px 2.5px var(--shadow-color);
 }
 
 .profile-section .skills-container .skill__bar--inside, .profile-section .skills-container .language__bar--inside, .profile-section .skills-container .hobby__bar--inside, .profile-section .language-container .skill__bar--inside, .profile-section .language-container .language__bar--inside, .profile-section .language-container .hobby__bar--inside, .profile-section .hobbies-container .skill__bar--inside, .profile-section .hobbies-container .language__bar--inside, .profile-section .hobbies-container .hobby__bar--inside {
   width: 80%;
   height: 100%;
   border-radius: 3px;
-  background: linear-gradient(135deg, #FF5711, #e44079);
-  -webkit-box-shadow: 0px 0px 5px 2.5px #000000;
-          box-shadow: 0px 0px 5px 2.5px #000000;
+  background: linear-gradient(135deg, var(--accent-color), var(--attenuate-color));
+  -webkit-box-shadow: 0px 0px 5px 2.5px var(--shadow-color);
+          box-shadow: 0px 0px 5px 2.5px var(--shadow-color);
   position: relative;
 }
 
@@ -218,10 +243,10 @@ body {
 .work-section, .formation-section {
   width: 100%;
   padding: 3.5%;
-  background-color: #17141D;
+  background-color: var(--primary-color);
   position: relative;
-  -webkit-box-shadow: 0px 0px 10px 2.5px #000000;
-          box-shadow: 0px 0px 10px 2.5px #000000;
+  -webkit-box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
+          box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
 }
 
 .work-section .fa-adjust, .work-section .fa-download, .formation-section .fa-adjust, .formation-section .fa-download {
@@ -247,7 +272,7 @@ body {
 
 .work-section .work-container, .work-section .formation-container, .formation-section .work-container, .formation-section .formation-container {
   padding: 2.5% 0;
-  border-bottom: 1px solid #312D3C;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .work-section .work-container h1, .work-section .work-container h2, .work-section .work-container p, .work-section .formation-container h1, .work-section .formation-container h2, .work-section .formation-container p, .formation-section .work-container h1, .formation-section .work-container h2, .formation-section .work-container p, .formation-section .formation-container h1, .formation-section .formation-container h2, .formation-section .formation-container p {
@@ -257,18 +282,18 @@ body {
 
 .work-section .work-container h1, .work-section .formation-container h1, .formation-section .work-container h1, .formation-section .formation-container h1 {
   font-size: 2.0rem;
-  color: #FF5711;
+  color: var(--accent-color);
 }
 
 .work-section .work-container h1 i, .work-section .formation-container h1 i, .formation-section .work-container h1 i, .formation-section .formation-container h1 i {
   padding: 0 10px;
-  color: #f5f5f5;
+  color: var(--text-color);
 }
 
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
   font-size: 1.8rem;
   font-weight: normal;
-  color: #00a8ee;
+  color: var(--calendar-color);
 }
 
 .work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
