@@ -10,6 +10,17 @@
   --shadow-color: #000000;
 }
 
+.light {
+  --background-color: #dddddd;
+  --primary-color: #f5f5f5;
+  --accent-color: #FF5711;
+  --attenuate-color: #E52F6F;
+  --calendar-color: #00a8ee;
+  --color-border: #dadada;
+  --text-color: #121212;
+  --shadow-color: #b4b4b4;
+}
+
 /* =============== MIXINS =============== */
 /* =============== ANIMATIONS =============== */
 /* width */
