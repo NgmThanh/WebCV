@@ -77,7 +77,7 @@
     text-decoration: none;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    word-break: break-all;
+
     &::selection {
         background-color: #DEE1E6;
     }
@@ -253,16 +253,17 @@ body {
     box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
     transition: 0.5s all ease;
 
-    // dark / light mode
-    .fa-adjust, .fa-download {
-        position: absolute;
-        right: 5%;
-        top: 5%;
-        font-size: 2rem;
-    }
-
+    // download cv
     .fa-download {
-        right: 10%;
+        float: right;
+        margin: 15px;
+        font-size: 2rem;
+        transition: 0.5s ease;
+
+        &:hover {
+            color: var(--calendar-color);
+            transition: 0.5s ease;
+        }
     }
 
     .main-title-right {
@@ -326,5 +327,12 @@ body {
         .right-container {
             width: 97.5%;
         }
+    }
+
+    .fa-download {
+        position: fixed;
+        top: 3.5%;
+        right: 3.5%;
+        z-index: 50;
     }
 }
