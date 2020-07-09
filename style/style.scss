@@ -176,6 +176,7 @@ body {
 
         &__name {
             font-size: 2.5rem;
+            color: #121212;
             position: absolute;
             bottom: 5%;
             left: 5%;
@@ -191,6 +192,7 @@ body {
         &__field {
             padding: 15px 0 10px;
             vertical-align: middle;
+            word-break: break-all;
         }
         i {
             width: 35px;

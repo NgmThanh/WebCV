@@ -204,6 +204,7 @@ body {
 
 .profile-section .frame__name {
   font-size: 2.5rem;
+  color: #121212;
   position: absolute;
   bottom: 5%;
   left: 5%;
@@ -216,6 +217,7 @@ body {
 .profile-section .personal-data__field {
   padding: 15px 0 10px;
   vertical-align: middle;
+  word-break: break-all;
 }
 
 .profile-section .personal-data i {
