@@ -324,6 +324,14 @@ body {
   color: var(--text-color);
 }
 
+.work-section .work-container h1 span, .work-section .formation-container h1 span, .formation-section .work-container h1 span, .formation-section .formation-container h1 span {
+  font-size: 1.6rem;
+  color: var(--attenuate-color);
+  float: right;
+  display: block;
+  margin-top: 7.5px;
+}
+
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
   font-size: 1.8rem;
   font-weight: normal;

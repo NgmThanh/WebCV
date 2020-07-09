@@ -290,7 +290,15 @@ body {
                 padding: 0 10px;
                 color: var(--text-color);
             }
+            span {
+                font-size: 1.6rem;
+                color: var(--attenuate-color);
+                float: right;
+                display: block;
+                margin-top: 7.5px;
+            }
         }
+        
         h2 {
             font-size: 1.8rem;
             font-weight: normal;
