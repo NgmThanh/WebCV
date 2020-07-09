@@ -1,3 +1,5 @@
+/* =============== FONTS =============== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Saira+Semi+Condensed:wght@400;500;600;700&family=Titillium+Web:wght@400;600;700&display=swap");
 /* =============== COLORS =============== */
 :root {
   --background-color: #100E17;
@@ -46,7 +48,7 @@
 
 /* =============== MAIN CODE =============== */
 * {
-  font-family: "Titillium Web", "Roboto";
+  font-family: "Titillium Web";
   font-size: 1.6rem;
   color: var(--text-color);
   padding: 0;
@@ -69,15 +71,13 @@
   max-width: 100%;
 }
 
-h1, h2 {
+h1, h2, .main-title-left, .main-title-right, h1 span {
   font-family: "Saira Semi Condensed";
   font-weight: 500;
-  isolation: isolate;
 }
 
 i {
   color: var(--accent-color);
-  isolation: isolate;
 }
 
 html {
@@ -203,7 +203,8 @@ body {
 }
 
 .profile-section .frame__name {
-  font-size: 2.5rem;
+  font-family: "Roboto";
+  font-size: 3rem;
   color: #121212;
   position: absolute;
   bottom: 5%;
@@ -226,7 +227,6 @@ body {
 
 .profile-section .skills-container .main-title-left, .profile-section .language-container .main-title-left, .profile-section .hobbies-container .main-title-left {
   font-size: 2.1rem;
-  font-weight: 600;
   padding: 12px 0;
   margin: -5px 0 15px;
   border-bottom: 1px solid var(--color-border);
@@ -234,7 +234,7 @@ body {
 
 .profile-section .skills-container .main-title-left i, .profile-section .language-container .main-title-left i, .profile-section .hobbies-container .main-title-left i {
   width: 35px;
-  font-size: 2.2rem;
+  font-size: 2.25rem;
 }
 
 .profile-section .skills-container .skill, .profile-section .skills-container .language, .profile-section .skills-container .hobby, .profile-section .language-container .skill, .profile-section .language-container .language, .profile-section .language-container .hobby, .profile-section .hobbies-container .skill, .profile-section .hobbies-container .language, .profile-section .hobbies-container .hobby {
@@ -298,7 +298,6 @@ body {
 
 .work-section .main-title-right, .formation-section .main-title-right {
   font-size: 3rem;
-  font-family: 600;
 }
 
 .work-section .main-title-right i, .formation-section .main-title-right i {
@@ -317,13 +316,21 @@ body {
 }
 
 .work-section .work-container h1, .work-section .formation-container h1, .formation-section .work-container h1, .formation-section .formation-container h1 {
-  font-size: 2.0rem;
+  font-size: 2.25rem;
+  color: var(--accent-color);
+}
+
+.work-section .work-container h1 a, .work-section .formation-container h1 a, .formation-section .work-container h1 a, .formation-section .formation-container h1 a {
+  font-family: "Saira Semi Condensed";
+  font-weight: 500;
+  font-size: 2.25rem;
   color: var(--accent-color);
 }
 
 .work-section .work-container h1 i, .work-section .formation-container h1 i, .formation-section .work-container h1 i, .formation-section .formation-container h1 i {
+  font-size: 2.0rem;
+  color: var(--calendar-color);
   padding: 0 10px;
-  color: var(--text-color);
 }
 
 .work-section .work-container h1 span, .work-section .formation-container h1 span, .formation-section .work-container h1 span, .formation-section .formation-container h1 span {
@@ -331,7 +338,8 @@ body {
   color: var(--attenuate-color);
   float: right;
   display: block;
-  margin-top: 7.5px;
+  margin-top: 8px;
+  margin-left: 10px;
 }
 
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
@@ -340,12 +348,12 @@ body {
   color: var(--calendar-color);
 }
 
-.work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
-  font-size: 1.5rem;
-}
-
 .work-section .work-container i, .work-section .formation-container i, .formation-section .work-container i, .formation-section .formation-container i {
   width: 30px;
+}
+
+.work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
+  font-size: 1.5rem;
 }
 
 .work-section .border-last, .formation-section .border-last {
