@@ -28,6 +28,26 @@
     --shadow-color: #b4b4b4;
 }
 
+/* =============== ANIMATIONS =============== */
+
+@keyframes title-apparition-right {
+    from {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes title-apparition-left {
+    from {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes progress-bar-load {
+    from {
+        width: 0;
+    }
+}
+
 /* =============== MIXINS =============== */
 
 @mixin gradient-background {
@@ -94,7 +114,8 @@ i {
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%;   /* 1 rem = 10px */
+    overflow-x :hidden;
 }
 
 body {
@@ -189,6 +210,7 @@ body {
     .personal-data {
         // line of information
         &__field {
+            animation: title-apparition-left 1s ease-out 0s forwards;
             padding: 15px 0 10px;
             vertical-align: middle;
             word-break: break-all;
@@ -203,6 +225,7 @@ body {
 
         // titles of left categories
         .main-title-left {
+            animation: title-apparition-left 1s ease-out 0.2s forwards;
             font-size: 2.1rem;
             padding: 12px 0;
             margin: -5px 0 15px;
@@ -236,6 +259,7 @@ body {
                     @include gradient-background;
                     box-shadow: 0px 0px 5px 1px var(--shadow-color);
                     position: relative;
+                    animation: progress-bar-load 1.5s ease 0s forwards;
 
                     // percent
                     div {
@@ -276,6 +300,7 @@ body {
 
     // big title experiences / formations
     .main-title-right {
+        animation: title-apparition-right 1s ease-out 0s forwards;
         font-size: 3rem;
         // icon
         i {
@@ -293,6 +318,7 @@ body {
         }
         // titles of works / formations
         h1 {
+            animation: title-apparition-right 1s ease-out 0.2s forwards;
             font-size: 2.25rem;
             color: var(--accent-color);
             // titles with links
@@ -320,6 +346,7 @@ body {
         }
         // date with calendar icon
         h2 {
+            animation: title-apparition-right 1s ease-out 0.2s forwards;
             font-size: 1.8rem;
             font-weight: normal;
             color: var(--calendar-color);
@@ -329,6 +356,7 @@ body {
         }
         // description
         p {
+            animation: title-apparition-right 1s ease-out 0.4s forwards;
             font-size: 1.5rem;
         }
         

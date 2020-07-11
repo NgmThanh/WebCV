@@ -23,6 +23,46 @@
   --shadow-color: #b4b4b4;
 }
 
+/* =============== ANIMATIONS =============== */
+@-webkit-keyframes title-apparition-right {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+@keyframes title-apparition-right {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes title-apparition-left {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes title-apparition-left {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes progress-bar-load {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes progress-bar-load {
+  from {
+    width: 0;
+  }
+}
+
 /* =============== MIXINS =============== */
 /* =============== ANIMATIONS =============== */
 /* width */
@@ -82,6 +122,8 @@ i {
 
 html {
   font-size: 62.5%;
+  /* 1 rem = 10px */
+  overflow-x: hidden;
 }
 
 body {
@@ -216,6 +258,8 @@ body {
 }
 
 .profile-section .personal-data__field {
+  -webkit-animation: title-apparition-left 1s ease-out 0s forwards;
+          animation: title-apparition-left 1s ease-out 0s forwards;
   padding: 15px 0 10px;
   vertical-align: middle;
   word-break: break-all;
@@ -226,6 +270,8 @@ body {
 }
 
 .profile-section .skills-container .main-title-left, .profile-section .language-container .main-title-left, .profile-section .hobbies-container .main-title-left {
+  -webkit-animation: title-apparition-left 1s ease-out 0.2s forwards;
+          animation: title-apparition-left 1s ease-out 0.2s forwards;
   font-size: 2.1rem;
   padding: 12px 0;
   margin: -5px 0 15px;
@@ -259,6 +305,8 @@ body {
   -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
           box-shadow: 0px 0px 5px 1px var(--shadow-color);
   position: relative;
+  -webkit-animation: progress-bar-load 1.5s ease 0s forwards;
+          animation: progress-bar-load 1.5s ease 0s forwards;
 }
 
 .profile-section .skills-container .skill__bar--inside div, .profile-section .skills-container .language__bar--inside div, .profile-section .skills-container .hobby__bar--inside div, .profile-section .language-container .skill__bar--inside div, .profile-section .language-container .language__bar--inside div, .profile-section .language-container .hobby__bar--inside div, .profile-section .hobbies-container .skill__bar--inside div, .profile-section .hobbies-container .language__bar--inside div, .profile-section .hobbies-container .hobby__bar--inside div {
@@ -297,6 +345,8 @@ body {
 }
 
 .work-section .main-title-right, .formation-section .main-title-right {
+  -webkit-animation: title-apparition-right 1s ease-out 0s forwards;
+          animation: title-apparition-right 1s ease-out 0s forwards;
   font-size: 3rem;
 }
 
@@ -316,6 +366,8 @@ body {
 }
 
 .work-section .work-container h1, .work-section .formation-container h1, .formation-section .work-container h1, .formation-section .formation-container h1 {
+  -webkit-animation: title-apparition-right 1s ease-out 0.2s forwards;
+          animation: title-apparition-right 1s ease-out 0.2s forwards;
   font-size: 2.25rem;
   color: var(--accent-color);
 }
@@ -343,6 +395,8 @@ body {
 }
 
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
+  -webkit-animation: title-apparition-right 1s ease-out 0.2s forwards;
+          animation: title-apparition-right 1s ease-out 0.2s forwards;
   font-size: 1.8rem;
   font-weight: normal;
   color: var(--calendar-color);
@@ -353,6 +407,8 @@ body {
 }
 
 .work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
+  -webkit-animation: title-apparition-right 1s ease-out 0.4s forwards;
+          animation: title-apparition-right 1s ease-out 0.4s forwards;
   font-size: 1.5rem;
 }
 
