@@ -30,16 +30,57 @@
 
 /* =============== ANIMATIONS =============== */
 
-@keyframes title-apparition-right {
+@keyframes slideDownIn {
     from {
-        transform: translateX(100%);
+        visibility: hidden;
+        opacity: 0.2;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
-@keyframes title-apparition-left {
-    from {
-        transform: translateX(-100%);
-    }
+// order apparition
+.slide-in-1 {
+    animation: slideDownIn 0.5s ease-out 0s forwards;
+}
+
+.slide-in-2 {
+    animation: slideDownIn 0.5s ease-out 0.05s forwards;
+}
+
+.slide-in-3 {
+    animation: slideDownIn 0.5s ease-out 0.1s forwards;
+}
+
+.slide-in-4 {
+    animation: slideDownIn 0.5s ease-out 0.15s forwards;
+}
+
+.slide-in-5 {
+    animation: slideDownIn 0.5s ease-out 0.2s forwards;
+}
+
+.slide-in-6 {
+    animation: slideDownIn 0.5s ease-out 0.25s forwards;
+}
+
+.slide-in-7 {
+    animation: slideDownIn 0.5s ease-out 0.3s forwards;
+}
+
+.slide-in-8 {
+    animation: slideDownIn 0.5s ease-out 0.35s forwards;
+}
+
+.slide-in-9 {
+    animation: slideDownIn 0.5s ease-out 0.4s forwards;
+}
+
+.slide-in-10 {
+    animation: slideDownIn 0.5s ease-out 0.45s forwards;
 }
 
 @keyframes progress-bar-load {
@@ -210,7 +251,6 @@ body {
     .personal-data {
         // line of information
         &__field {
-            animation: title-apparition-left 1s ease-out 0s forwards;
             padding: 15px 0 10px;
             vertical-align: middle;
             word-break: break-all;
@@ -225,7 +265,6 @@ body {
 
         // titles of left categories
         .main-title-left {
-            animation: title-apparition-left 1s ease-out 0.2s forwards;
             font-size: 2.1rem;
             padding: 12px 0;
             margin: -5px 0 15px;
@@ -249,7 +288,7 @@ body {
                 background-color: var(--color-border);
                 margin-top: 10px;
                 border-radius: 3px;
-                box-shadow: 0px 0px 5px 1px var(--shadow-color);
+                box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
 
                 // bar inside
                 &--inside {
@@ -257,7 +296,7 @@ body {
                     height: 100%;
                     border-radius: 3px;
                     @include gradient-background;
-                    box-shadow: 0px 0px 5px 1px var(--shadow-color);
+                    box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
                     position: relative;
                     animation: progress-bar-load 1.5s ease 0s forwards;
 
@@ -300,7 +339,6 @@ body {
 
     // big title experiences / formations
     .main-title-right {
-        animation: title-apparition-right 1s ease-out 0s forwards;
         font-size: 3rem;
         // icon
         i {
@@ -318,7 +356,6 @@ body {
         }
         // titles of works / formations
         h1 {
-            animation: title-apparition-right 1s ease-out 0.2s forwards;
             font-size: 2.25rem;
             color: var(--accent-color);
             // titles with links
@@ -346,7 +383,6 @@ body {
         }
         // date with calendar icon
         h2 {
-            animation: title-apparition-right 1s ease-out 0.2s forwards;
             font-size: 1.8rem;
             font-weight: normal;
             color: var(--calendar-color);
@@ -356,7 +392,6 @@ body {
         }
         // description
         p {
-            animation: title-apparition-right 1s ease-out 0.4s forwards;
             font-size: 1.5rem;
         }
         
