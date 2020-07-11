@@ -367,7 +367,6 @@ body {
   width: 100%;
   padding: 3.5%;
   background-color: var(--primary-color);
-  position: relative;
   -webkit-box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
           box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
   -webkit-transition: 0.5s all ease;
@@ -380,6 +379,8 @@ body {
   font-size: 2rem;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
+  position: relative;
+  z-index: 50;
 }
 
 .work-section .fa-download:hover, .formation-section .fa-download:hover {
@@ -483,7 +484,6 @@ body {
     position: fixed;
     top: 1.5%;
     right: 3.5%;
-    z-index: 50;
   }
 }
 /*# sourceMappingURL=style.css.map */
