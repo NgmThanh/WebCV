@@ -89,6 +89,15 @@
     }
 }
 
+@keyframes progress-bar-slide {
+    from{
+      margin-left: -100%;
+    }
+    to{
+      margin-left: 100%;
+    }
+}
+
 /* =============== MIXINS =============== */
 
 @mixin gradient-background {
@@ -295,10 +304,22 @@ body {
                     width: 80%;
                     height: 100%;
                     border-radius: 3px;
-                    @include gradient-background;
+                    // @include gradient-background;
+                    background: var(--accent-color);
                     box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
                     position: relative;
                     animation: progress-bar-load 1.5s ease 0s forwards;
+                    overflow: hidden;
+
+                    // after for animation progress bar
+                    &::after {
+                        display: block;
+                        content: "";
+                        height: 100%;
+                        width: 100%;
+                        background: linear-gradient(to right,  var(--accent-color), var(--attenuate-color), var(--accent-color));
+                        animation: progress-bar-slide 2.5s linear 0s infinite;
+                    }
 
                     // percent
                     div {

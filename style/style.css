@@ -111,6 +111,24 @@
   }
 }
 
+@-webkit-keyframes progress-bar-slide {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 100%;
+  }
+}
+
+@keyframes progress-bar-slide {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 100%;
+  }
+}
+
 /* =============== MIXINS =============== */
 /* =============== ANIMATIONS =============== */
 /* width */
@@ -345,12 +363,24 @@ body {
   width: 80%;
   height: 100%;
   border-radius: 3px;
-  background: linear-gradient(135deg, var(--accent-color), var(--attenuate-color));
+  background: var(--accent-color);
   -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
           box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
   position: relative;
   -webkit-animation: progress-bar-load 1.5s ease 0s forwards;
           animation: progress-bar-load 1.5s ease 0s forwards;
+  overflow: hidden;
+}
+
+.profile-section .skills-container .skill__bar--inside::after, .profile-section .skills-container .language__bar--inside::after, .profile-section .skills-container .hobby__bar--inside::after, .profile-section .language-container .skill__bar--inside::after, .profile-section .language-container .language__bar--inside::after, .profile-section .language-container .hobby__bar--inside::after, .profile-section .hobbies-container .skill__bar--inside::after, .profile-section .hobbies-container .language__bar--inside::after, .profile-section .hobbies-container .hobby__bar--inside::after {
+  display: block;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(var(--accent-color)), color-stop(var(--attenuate-color)), to(var(--accent-color)));
+  background: linear-gradient(to right, var(--accent-color), var(--attenuate-color), var(--accent-color));
+  -webkit-animation: progress-bar-slide 2.5s linear 0s infinite;
+          animation: progress-bar-slide 2.5s linear 0s infinite;
 }
 
 .profile-section .skills-container .skill__bar--inside div, .profile-section .skills-container .language__bar--inside div, .profile-section .skills-container .hobby__bar--inside div, .profile-section .language-container .skill__bar--inside div, .profile-section .language-container .language__bar--inside div, .profile-section .language-container .hobby__bar--inside div, .profile-section .hobbies-container .skill__bar--inside div, .profile-section .hobbies-container .language__bar--inside div, .profile-section .hobbies-container .hobby__bar--inside div {
