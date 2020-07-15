@@ -1,26 +1,43 @@
 /* =============== FONTS =============== */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Saira+Semi+Condensed:wght@400;500;600;700&family=Titillium+Web:wght@400;600;700&display=swap");
-/* =============== COLORS =============== */
-:root {
-  --background-color: #100E17;
-  --primary-color: #17141D;
-  --accent-color: #FF5711;
-  --attenuate-color: #e44079;
-  --calendar-color: #00a8ee;
-  --color-border: #312D3C;
-  --text-color: #f5f5f5;
-  --shadow-color: #000000;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../font/Segoe UI/segoeuisl.ttf") format("truetype");
+  font-weight: 400;
 }
 
-.light {
-  --background-color: #dddddd;
-  --primary-color: #f5f5f5;
-  --accent-color: #FF5711;
-  --attenuate-color: #E52F6F;
-  --calendar-color: #00a8ee;
-  --color-border: #dadada;
-  --text-color: #121212;
-  --shadow-color: #b4b4b4;
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../font/Segoe UI/segoeui.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../font/Segoe UI/seguisb.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../font/Segoe UI/segoeuib.ttf") format("truetype");
+  font-weight: 700;
+}
+
+/* =============== COLORS =============== */
+:root {
+  --background-dark: #1F1E1D;
+  --background-light: #f5f5f5;
+  --font-dark: #111111;
+  --font-light: #fff;
+  --font-grey: #cecece;
+  --material-color: #272628;
+  --material-lighter: #323135;
+  --material-grey: #9C9C9C;
+  --orange-pure: #F84525;
+  --shadow-dark: #000000;
+  --shadow-light: #cecece;
+  --light-grey: #F2F2F2;
 }
 
 /* =============== ANIMATIONS =============== */
@@ -134,32 +151,35 @@
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  display: none;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: transparent;
+  display: none;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: linear-gradient(135deg, var(--accent-color), var(--attenuate-color));
+  display: none;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--attenuate-color);
+  display: none;
 }
 
 /* =============== MAIN CODE =============== */
 * {
-  font-family: "Titillium Web";
+  font-family: "Segoe UI";
   font-size: 1.6rem;
-  color: var(--text-color);
   padding: 0;
   margin: 0;
   text-decoration: none;
+  letter-spacing: 0.5px;
   scroll-behavior: smooth;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -177,13 +197,14 @@
   max-width: 100%;
 }
 
-h1, h2, .main-title-left, .main-title-right, h1 span {
-  font-family: "Saira Semi Condensed";
-  font-weight: 500;
+h1, h2, .main-title-left, h1 span {
+  color: var(--font-light);
+  font-weight: 600;
 }
 
-i {
-  color: var(--accent-color);
+.main-title-right {
+  color: var(--font-dark);
+  font-weight: 600;
 }
 
 html {
@@ -194,28 +215,35 @@ html {
 
 body {
   font-size: 1.4rem;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--material-lighter);
+  color: var(--font-grey);
   font-weight: normal;
   padding: 2vh;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 
-.fa-calendar-alt {
-  color: var(--calendar-color);
+.light-page {
+  background-color: var(--font-light);
+  color: var(--font-dark);
 }
 
-.switch-mode {
+.shadow-page {
+  -webkit-box-shadow: 0px 0px 15px 2px var(--shadow-dark);
+          box-shadow: 0px 0px 15px 2px var(--shadow-dark);
+}
+
+/* ----------- PROGRESS BAR ----------- */
+#progress {
+  width: 4px;
+  height: 0px;
+  max-height: 100vh;
   position: fixed;
-  left: 3.5%;
-  bottom: 3.5%;
-  font-size: 2rem;
-  z-index: 100;
-  padding: 5px 7px;
-  border-radius: 50%;
-  background-color: var(--color-border);
-  cursor: pointer;
+  top: 0;
+  right: 0;
+  background-color: var(--font-dark);
+  background-color: var(--orange-pure);
+  z-index: 50;
 }
 
 /* ----------- ARROW MOVE TO TOP ----------- */
@@ -228,13 +256,14 @@ body {
 
 #arrow-up i {
   font-size: 3.5rem;
-  color: var(--accent-color);
-  text-shadow: 1px 1px var(--shadow-color);
+  color: var(--orange-pure);
+  text-shadow: 1px 1px var(--shadow-dark);
 }
 
 .main-container {
   margin: auto;
   max-width: 1400px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -285,11 +314,9 @@ body {
 
 .profile-section {
   width: 100%;
-  background-color: var(--primary-color);
-  -webkit-box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
-          box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
+  background-color: var(--background-dark);
 }
 
 .profile-section .frame {
@@ -298,7 +325,7 @@ body {
   /* same ratio picture */
   margin-bottom: 10px;
   position: relative;
-  background-color: var(--color-border);
+  background-color: var(--material-lighter);
 }
 
 .profile-section .frame__picture {
@@ -313,31 +340,44 @@ body {
 .profile-section .frame__name {
   font-family: "Roboto";
   font-size: 3rem;
-  color: #121212;
+  color: var(--font-dark);
   position: absolute;
   bottom: 5%;
   left: 5%;
 }
 
 .profile-section .personal-data, .profile-section .skills-container, .profile-section .language-container, .profile-section .hobbies-container {
-  padding: 2% 5%;
+  padding: 2.5% 6%;
 }
 
-.profile-section .personal-data__field {
+.profile-section .personal-data__field, .profile-section .personal-data a {
+  color: var(--font-grey);
   padding: 15px 0 10px;
   vertical-align: middle;
   word-break: break-all;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  font-weight: 600;
+}
+
+.profile-section .personal-data__field:hover, .profile-section .personal-data a:hover {
+  color: var(--font-light);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 
 .profile-section .personal-data i {
+  color: var(--orange-pure);
   width: 35px;
 }
 
 .profile-section .skills-container .main-title-left, .profile-section .language-container .main-title-left, .profile-section .hobbies-container .main-title-left {
-  font-size: 2.1rem;
+  font-size: 1.85rem;
   padding: 12px 0;
   margin: -5px 0 15px;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--font-light);
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .profile-section .skills-container .main-title-left i, .profile-section .language-container .main-title-left i, .profile-section .hobbies-container .main-title-left i {
@@ -347,26 +387,37 @@ body {
 
 .profile-section .skills-container .skill, .profile-section .skills-container .language, .profile-section .skills-container .hobby, .profile-section .language-container .skill, .profile-section .language-container .language, .profile-section .language-container .hobby, .profile-section .hobbies-container .skill, .profile-section .hobbies-container .language, .profile-section .hobbies-container .hobby {
   padding: 10px 0;
+  font-weight: normal;
+  font-size: 1.6rem;
+  font-weight: 600;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.profile-section .skills-container .skill:hover, .profile-section .skills-container .language:hover, .profile-section .skills-container .hobby:hover, .profile-section .language-container .skill:hover, .profile-section .language-container .language:hover, .profile-section .language-container .hobby:hover, .profile-section .hobbies-container .skill:hover, .profile-section .hobbies-container .language:hover, .profile-section .hobbies-container .hobby:hover {
+  color: var(--font-light);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 
 .profile-section .skills-container .skill__bar, .profile-section .skills-container .language__bar, .profile-section .skills-container .hobby__bar, .profile-section .language-container .skill__bar, .profile-section .language-container .language__bar, .profile-section .language-container .hobby__bar, .profile-section .hobbies-container .skill__bar, .profile-section .hobbies-container .language__bar, .profile-section .hobbies-container .hobby__bar {
   width: 100%;
   height: 18px;
-  background-color: var(--color-border);
+  background-color: var(--material-lighter);
   margin-top: 10px;
+  position: relative;
   border-radius: 3px;
-  -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-dark);
+          box-shadow: 0px 0px 5px 1px var(--shadow-dark);
 }
 
 .profile-section .skills-container .skill__bar--inside, .profile-section .skills-container .language__bar--inside, .profile-section .skills-container .hobby__bar--inside, .profile-section .language-container .skill__bar--inside, .profile-section .language-container .language__bar--inside, .profile-section .language-container .hobby__bar--inside, .profile-section .hobbies-container .skill__bar--inside, .profile-section .hobbies-container .language__bar--inside, .profile-section .hobbies-container .hobby__bar--inside {
-  width: 80%;
   height: 100%;
+  width: 1px;
   border-radius: 3px;
-  background: var(--accent-color);
-  -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-  position: relative;
+  background: var(--material-color);
+  -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
+          box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
   -webkit-animation: progress-bar-load 1.5s ease 0s forwards;
           animation: progress-bar-load 1.5s ease 0s forwards;
   overflow: hidden;
@@ -377,13 +428,14 @@ body {
   content: "";
   height: 100%;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(var(--accent-color)), color-stop(var(--attenuate-color)), to(var(--accent-color)));
-  background: linear-gradient(to right, var(--accent-color), var(--attenuate-color), var(--accent-color));
-  -webkit-animation: progress-bar-slide 2.5s linear 0s infinite;
-          animation: progress-bar-slide 2.5s linear 0s infinite;
+  background: -webkit-gradient(linear, left top, right top, from(var(--material-color)), to(var(--orange-pure)));
+  background: linear-gradient(to right, var(--material-color), var(--orange-pure));
+  -webkit-animation: progress-bar-slide 3s linear 0s infinite;
+          animation: progress-bar-slide 3s linear 0s infinite;
 }
 
 .profile-section .skills-container .skill__bar--inside div, .profile-section .skills-container .language__bar--inside div, .profile-section .skills-container .hobby__bar--inside div, .profile-section .language-container .skill__bar--inside div, .profile-section .language-container .language__bar--inside div, .profile-section .language-container .hobby__bar--inside div, .profile-section .hobbies-container .skill__bar--inside div, .profile-section .hobbies-container .language__bar--inside div, .profile-section .hobbies-container .hobby__bar--inside div {
+  color: var(--shadow-light);
   position: absolute;
   bottom: 27.5px;
   right: 0%;
@@ -395,18 +447,16 @@ body {
 
 .work-section, .formation-section {
   width: 100%;
-  padding: 3.5%;
-  background-color: var(--primary-color);
-  -webkit-box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
-          box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
+  padding: 5%;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 
 .work-section .fa-download, .formation-section .fa-download {
   float: right;
-  margin: 15px;
+  margin: 7.5px;
   font-size: 2rem;
+  color: var(--orange-pure);
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   position: relative;
@@ -420,7 +470,9 @@ body {
 }
 
 .work-section .main-title-right, .formation-section .main-title-right {
-  font-size: 3rem;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  display: block;
 }
 
 .work-section .main-title-right i, .formation-section .main-title-right i {
@@ -430,7 +482,8 @@ body {
 
 .work-section .work-container, .work-section .formation-container, .formation-section .work-container, .formation-section .formation-container {
   padding: 2.5% 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--material-color);
+  letter-spacing: 0.2px;
 }
 
 .work-section .work-container h1, .work-section .work-container h2, .work-section .work-container p, .work-section .formation-container h1, .work-section .formation-container h2, .work-section .formation-container p, .formation-section .work-container h1, .formation-section .work-container h2, .formation-section .work-container p, .formation-section .formation-container h1, .formation-section .formation-container h2, .formation-section .formation-container p {
@@ -439,40 +492,42 @@ body {
 }
 
 .work-section .work-container h1, .work-section .formation-container h1, .formation-section .work-container h1, .formation-section .formation-container h1 {
-  font-size: 2.25rem;
-  color: var(--accent-color);
+  font-size: 2rem;
+  color: var(--orange-pure);
 }
 
 .work-section .work-container h1 a, .work-section .formation-container h1 a, .formation-section .work-container h1 a, .formation-section .formation-container h1 a {
-  font-family: "Saira Semi Condensed";
-  font-weight: 500;
-  font-size: 2.25rem;
-  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--orange-pure);
 }
 
 .work-section .work-container h1 i, .work-section .formation-container h1 i, .formation-section .work-container h1 i, .formation-section .formation-container h1 i {
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   color: var(--calendar-color);
   padding: 0 10px;
 }
 
-.work-section .work-container h1 span, .work-section .formation-container h1 span, .formation-section .work-container h1 span, .formation-section .formation-container h1 span {
-  font-size: 1.6rem;
-  color: var(--attenuate-color);
+.work-section .work-container h1 div, .work-section .formation-container h1 div, .formation-section .work-container h1 div, .formation-section .formation-container h1 div {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: var(--font-light);
+  background-color: var(--material-color);
+  border-radius: 4px;
+  padding: 5px 8px;
   float: right;
-  display: block;
-  margin-top: 8px;
-  margin-left: 10px;
+  margin-top: 2.5px;
+  margin-left: 5px;
 }
 
 .work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
-  font-size: 1.8rem;
-  font-weight: normal;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--calendar-color);
 }
 
 .work-section .work-container i, .work-section .formation-container i, .formation-section .work-container i, .formation-section .formation-container i {
-  width: 30px;
+  width: 27.5px;
 }
 
 .work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
@@ -481,6 +536,7 @@ body {
 
 .work-section .border-last, .formation-section .border-last {
   border-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .formation-section {

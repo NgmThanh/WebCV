@@ -1,31 +1,46 @@
 /* =============== FONTS =============== */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Saira+Semi+Condensed:wght@400;500;600;700&family=Titillium+Web:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url("../font/Segoe UI/segoeuisl.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url("../font/Segoe UI/segoeui.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url("../font/Segoe UI/seguisb.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url("../font/Segoe UI/segoeuib.ttf") format("truetype");
+    font-weight: 700;
+}
 
 /* =============== COLORS =============== */
 
-// dark mode colors (default)
 :root {
-    --background-color: #100E17;
-    --primary-color: #17141D;
-    --accent-color: #FF5711;
-    --attenuate-color: #e44079;
-    --calendar-color: #00a8ee;
-    --color-border: #312D3C;
-    --text-color: #f5f5f5;
-    --shadow-color: #000000;
-}
-
-// light mode colors
-.light {
-    --background-color: #dddddd;
-    --primary-color: #f5f5f5;
-    --accent-color: #FF5711;
-    --attenuate-color: #E52F6F;
-    --calendar-color: #00a8ee;
-    --color-border: #dadada;
-    --text-color: #121212;
-    --shadow-color: #b4b4b4;
+    --background-dark: #1F1E1D;
+    --background-light: #f5f5f5;
+    --font-dark: #111111;
+    --font-light: #fff;
+    --font-grey: #cecece;
+    --material-color: #272628;
+    --material-lighter: #323135;
+    --material-grey: #9C9C9C;
+    --orange-pure: #F84525;
+    --shadow-dark: #000000;
+    --shadow-light: #cecece;
+    --light-grey: #F2F2F2;
 }
 
 /* =============== ANIMATIONS =============== */
@@ -100,10 +115,6 @@
 
 /* =============== MIXINS =============== */
 
-@mixin gradient-background {
-    background: linear-gradient(135deg, var(--accent-color),var(--attenuate-color));
-}
-
 @mixin flex($flow, $justify, $align) {
     display: flex;
     flex-flow: $flow;
@@ -116,36 +127,38 @@
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
+    display: none;
 }
   
 /* Track */
 ::-webkit-scrollbar-track {
     background: transparent; 
+    display: none;
 }
    
 /* Handle */
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    @include gradient-background;
+    display: none;
 }
   
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--attenuate-color); 
+    display: none;
 }
 
 /* =============== MAIN CODE =============== */
 
 * {
-    font-family: "Titillium Web";
+    font-family: "Segoe UI";
     font-size: 1.6rem;
-    color: var(--text-color);
     padding: 0;
     margin: 0;
     text-decoration: none;
+    letter-spacing: 0.5px;
     scroll-behavior: smooth;
     box-sizing: border-box;
-
     &::selection {
         background-color: #DEE1E6;
     }
@@ -154,13 +167,14 @@
     }
 }
 
-h1, h2, .main-title-left, .main-title-right, h1 span {
-    font-family: "Saira Semi Condensed";
-    font-weight: 500;
+h1, h2, .main-title-left, h1 span {
+    color: var(--font-light);
+    font-weight: 600;
 }
 
-i {
-    color: var(--accent-color);
+.main-title-right {
+    color: var(--font-dark);
+    font-weight: 600;
 }
 
 html {
@@ -170,28 +184,33 @@ html {
 
 body {
     font-size: 1.4rem;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--material-lighter);
+    color: var(--font-grey);
     font-weight: normal;
     padding: 2vh;
     transition: 0.5s all ease;
 }
 
-.fa-calendar-alt {
-    color: var(--calendar-color);
+.light-page {
+    background-color: var(--font-light);
+    color: var(--font-dark);
 }
 
-// button change theme (dark - light)
-.switch-mode {
-    position: fixed;
-    left: 3.5%;
-    bottom: 3.5%;
-    font-size: 2rem;
-    z-index: 100;
-    padding: 5px 7px;
-    border-radius: 50%;
-    background-color: var(--color-border);
-    cursor: pointer;
+.shadow-page {
+    box-shadow: 0px 0px 15px 2px var(--shadow-dark);
+}
+
+/* ----------- PROGRESS BAR ----------- */
+#progress{
+    width: 4px;
+    height: 0px;
+    max-height: 100vh;
+	position: fixed;
+	top: 0;
+    right: 0;
+    background-color: var(--font-dark);
+    background-color: var(--orange-pure);
+    z-index: 50;
 }
 
 /* ----------- ARROW MOVE TO TOP ----------- */
@@ -202,14 +221,15 @@ body {
     z-index: 50;
     i {
         font-size: 3.5rem;
-        color: var(--accent-color);
-        text-shadow: 1px 1px var(--shadow-color);
+        color: var(--orange-pure);
+        text-shadow: 1px 1px var(--shadow-dark);
     }
 }
 
 .main-container {
     margin: auto;
     max-width: 1400px;
+    position: relative;
     @include flex(row wrap, space-around, flex-start);
 
     .left-container {
@@ -225,16 +245,15 @@ body {
 
 .profile-section {
     width: 100%;
-    background-color: var(--primary-color);
-    box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
     transition: 0.5s all ease;
+    background-color: var(--background-dark);
 
     .frame {
         width: 100%;
         padding-top: 65%;   /* same ratio picture */
         margin-bottom: 10px;
         position: relative;
-        background-color: var(--color-border);
+        background-color: var(--material-lighter);
         // profile picture
         &__picture {
             position: absolute;
@@ -245,7 +264,7 @@ body {
         &__name {
             font-family: "Roboto";
             font-size: 3rem;
-            color: #121212;
+            color: var(--font-dark);
             position: absolute;
             bottom: 5%;
             left: 5%;
@@ -253,19 +272,28 @@ body {
     }
 
     .personal-data, .skills-container, .language-container, .hobbies-container {
-        padding: 2% 5%;
+        padding: 2.5% 6%;
     }
 
     // container of my informations
     .personal-data {
         // line of information
-        &__field {
+        &__field, a {
+            color: var(--font-grey);
             padding: 15px 0 10px;
             vertical-align: middle;
             word-break: break-all;
+            transition: 0.4s ease;
+            font-weight: 600;
+
+            &:hover {
+                color: var(--font-light);
+                transition: 0.4s ease;
+            }
         }
         // icons of personal data
         i {
+            color: var(--orange-pure);
             width: 35px;
         }
     }
@@ -274,10 +302,12 @@ body {
 
         // titles of left categories
         .main-title-left {
-            font-size: 2.1rem;
+            font-size: 1.85rem;
             padding: 12px 0;
             margin: -5px 0 15px;
-            border-bottom: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--font-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
 
             // icons of title
             i {
@@ -289,25 +319,33 @@ body {
         // sections
         .skill, .language, .hobby {
             padding: 10px 0;
+            font-weight: normal;
+            font-size: 1.6rem;
+            font-weight: 600;
+            transition: 0.4s ease;
+
+            &:hover {
+                color: var(--font-light);
+                transition: 0.4s ease;
+            }
 
             // container bar
             &__bar {
                 width: 100%;
                 height: 18px;
-                background-color: var(--color-border);
+                background-color: var(--material-lighter);
                 margin-top: 10px;
+                position: relative;
                 border-radius: 3px;
-                box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+                box-shadow: 0px 0px 5px 1px var(--shadow-dark);
 
                 // bar inside
                 &--inside {
-                    width: 80%;
                     height: 100%;
+                    width: 1px;
                     border-radius: 3px;
-                    // @include gradient-background;
-                    background: var(--accent-color);
-                    box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-                    position: relative;
+                    background: var(--material-color);
+                    box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
                     animation: progress-bar-load 1.5s ease 0s forwards;
                     overflow: hidden;
 
@@ -317,12 +355,13 @@ body {
                         content: "";
                         height: 100%;
                         width: 100%;
-                        background: linear-gradient(to right,  var(--accent-color), var(--attenuate-color), var(--accent-color));
-                        animation: progress-bar-slide 2.5s linear 0s infinite;
+                        background: linear-gradient(to right,  var(--material-color), var(--orange-pure));
+                        animation: progress-bar-slide 3s linear 0s infinite;
                     }
 
                     // percent
                     div {
+                        color: var(--shadow-light);
                         position: absolute;
                         bottom: 27.5px;
                         right: 0%;
@@ -339,16 +378,16 @@ body {
 
 .work-section, .formation-section {
     width: 100%;
-    padding: 3.5%;
-    background-color: var(--primary-color);
-    box-shadow: 0px 0px 10px 2.5px var(--shadow-color);
+    // padding: 3.5% 5%;
+    padding: 5%;
     transition: 0.5s all ease;
 
     // download cv
     .fa-download {
         float: right;
-        margin: 15px;
+        margin: 7.5px;
         font-size: 2rem;
+        color: var(--orange-pure);
         transition: 0.5s ease;
         position: relative;
         z-index: 50;
@@ -361,7 +400,10 @@ body {
 
     // big title experiences / formations
     .main-title-right {
-        font-size: 3rem;
+        text-transform: uppercase;
+        font-size: 2.4rem;
+        display: block;
+        // margin-top: 5px;
         // icon
         i {
             width: 50px;
@@ -371,46 +413,50 @@ body {
 
     .work-container, .formation-container {
         padding: 2.5% 0;  
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--material-color);
+        letter-spacing: 0.2px;
+
         h1, h2, p {
             display: block;
             margin: 5px 0;
         }
         // titles of works / formations
         h1 {
-            font-size: 2.25rem;
-            color: var(--accent-color);
+            font-size: 2rem;
+            color: var(--orange-pure);
             // titles with links
             a {
-                font-family: "Saira Semi Condensed";
-                font-weight: 500;
-                font-size: 2.25rem;
-                color: var(--accent-color);
+                font-weight: 600;
+                font-size: 2rem;
+                color: var(--orange-pure);
             }
             // redirections
             i {
-                font-size: 2.0rem;
+                font-size: 1.8rem;
                 color: var(--calendar-color);
                 padding: 0 10px;
             }
             // languages used
-            span {
-                font-size: 1.6rem;
-                color: var(--attenuate-color);
+            div {
+                text-transform: uppercase;
+                font-size: 1.3rem;
+                color: var(--font-light);
+                background-color: var(--material-color);
+                border-radius: 4px;
+                padding: 5px 8px;
                 float: right;
-                display: block;
-                margin-top: 8px;
-                margin-left: 10px;
+                margin-top: 2.5px;
+                margin-left: 5px;
             }
         }
         // date with calendar icon
         h2 {
-            font-size: 1.8rem;
-            font-weight: normal;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--calendar-color);
         }
         i {
-            width: 30px;
+            width: 27.5px;
         }
         // description
         p {
@@ -422,6 +468,7 @@ body {
     // to take off border bottom if last container
     .border-last {
         border-bottom: 0px;
+        padding-bottom: 0;
     }
 }
 
