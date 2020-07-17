@@ -508,7 +508,13 @@ body {
   padding: 0 10px;
 }
 
-.work-section .work-container h1 div, .work-section .formation-container h1 div, .formation-section .work-container h1 div, .formation-section .formation-container h1 div {
+.work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--calendar-color);
+}
+
+.work-section .work-container div, .work-section .formation-container div, .formation-section .work-container div, .formation-section .formation-container div {
   text-transform: uppercase;
   font-size: 1.3rem;
   color: var(--font-light);
@@ -516,14 +522,16 @@ body {
   border-radius: 4px;
   padding: 5px 8px;
   float: right;
-  margin-top: 2.5px;
+  margin-top: -5px;
   margin-left: 5px;
 }
 
-.work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--calendar-color);
+@media all and (max-width: 650px) {
+  .work-section .work-container div, .work-section .formation-container div, .formation-section .work-container div, .formation-section .formation-container div {
+    float: none;
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+  }
 }
 
 .work-section .work-container i, .work-section .formation-container i, .formation-section .work-container i, .formation-section .formation-container i {

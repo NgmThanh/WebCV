@@ -434,24 +434,30 @@ body {
                 color: var(--calendar-color);
                 padding: 0 10px;
             }
-            // languages used
-            div {
-                text-transform: uppercase;
-                font-size: 1.3rem;
-                color: var(--font-light);
-                background-color: var(--material-color);
-                border-radius: 4px;
-                padding: 5px 8px;
-                float: right;
-                margin-top: 2.5px;
-                margin-left: 5px;
-            }
         }
         // date with calendar icon
         h2 {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--calendar-color);
+        }
+        // languages used
+        div {
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            color: var(--font-light);
+            background-color: var(--material-color);
+            border-radius: 4px;
+            padding: 5px 8px;            
+            float: right;
+            margin-top: -5px;
+            margin-left: 5px;
+
+            @media all and (max-width: 650px) {
+                float: none;
+                display: inline-block;
+                margin: 5px 5px 5px 0;
+            }
         }
         i {
             width: 27.5px;
