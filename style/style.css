@@ -126,11 +126,6 @@
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-  to {
-    width: 100%;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
 }
 
 @keyframes progress-bar-load {
@@ -138,33 +133,6 @@
     width: 0;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-  }
-  to {
-    width: 100%;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-}
-
-@-webkit-keyframes progress-bar-slide {
-  from {
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    -webkit-transform: translate3d(100%, 0, 0);
-            transform: translate3d(100%, 0, 0);
-  }
-}
-
-@keyframes progress-bar-slide {
-  from {
-    -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    -webkit-transform: translate3d(100%, 0, 0);
-            transform: translate3d(100%, 0, 0);
   }
 }
 
@@ -443,6 +411,8 @@ body {
           box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
   -webkit-animation: progress-bar-load 1.5s ease 0s forwards;
           animation: progress-bar-load 1.5s ease 0s forwards;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   overflow: hidden;
 }
 
@@ -451,10 +421,7 @@ body {
   content: "";
   height: 100%;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(var(--material-color)), to(var(--orange-pure)));
-  background: linear-gradient(to right, var(--material-color), var(--orange-pure));
-  -webkit-animation: progress-bar-slide 3s linear 0s infinite;
-          animation: progress-bar-slide 3s linear 0s infinite;
+  background: linear-gradient(135deg, var(--material-color), var(--orange-pure));
 }
 
 .profile-section .skills-container .skill__bar--inside div, .profile-section .skills-container .language__bar--inside div, .profile-section .skills-container .hobby__bar--inside div, .profile-section .language-container .skill__bar--inside div, .profile-section .language-container .language__bar--inside div, .profile-section .language-container .hobby__bar--inside div, .profile-section .hobbies-container .skill__bar--inside div, .profile-section .hobbies-container .language__bar--inside div, .profile-section .hobbies-container .hobby__bar--inside div {

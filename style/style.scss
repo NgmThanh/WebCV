@@ -70,19 +70,6 @@
         width: 0;
         transform: translate3d(0, 0, 0);
     }
-    to {
-        width: 100%;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes progress-bar-slide {
-    from{
-        transform: translate3d(-100%, 0, 0);
-    }
-    to{
-        transform: translate3d(100%, 0, 0);
-    }
 }
 
 /* =============== MIXINS =============== */
@@ -317,6 +304,7 @@ body {
                     background: var(--material-color);
                     box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
                     animation: progress-bar-load 1.5s ease 0s forwards;
+                    transform: translate3d(0, 0, 0);
                     overflow: hidden;
 
                     // after for animation progress bar
@@ -325,8 +313,7 @@ body {
                         content: "";
                         height: 100%;
                         width: 100%;
-                        background: linear-gradient(to right,  var(--material-color), var(--orange-pure));
-                        animation: progress-bar-slide 3s linear 0s infinite;
+                        background: linear-gradient(135deg,  var(--material-color), var(--orange-pure));
                     }
 
                     // percent
