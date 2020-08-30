@@ -68,6 +68,11 @@
 @keyframes progress-bar-load {
     from {
         width: 0;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        width: 100%;
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -176,6 +181,7 @@ body {
 	top: 0; right: 0;
     background-color: var(--orange-pure);
     z-index: 50;
+    transform: translate3d(0, 0, 0);
 }
 
 /* ----------- ARROW MOVE TO TOP ----------- */
