@@ -47,55 +47,22 @@
 
 @keyframes slideDownIn {
     from {
-        visibility: hidden;
         opacity: 0.2;
-        transform: translateY(35px);
+        visibility: hidden;
+        transform: translate3d(0, 35px, 0);
     }
     to {
         opacity: 1;
         visibility: visible;
+        transform: translate3d(0, 0, 0);
     }
 }
 
 // order apparition
-.slide-in-1 {
-    animation: slideDownIn 0.5s ease-out 0s forwards;
-}
-
-.slide-in-2 {
-    animation: slideDownIn 0.5s ease-out 0.05s forwards;
-}
-
-.slide-in-3 {
-    animation: slideDownIn 0.5s ease-out 0.1s forwards;
-}
-
-.slide-in-4 {
-    animation: slideDownIn 0.5s ease-out 0.15s forwards;
-}
-
-.slide-in-5 {
-    animation: slideDownIn 0.5s ease-out 0.2s forwards;
-}
-
-.slide-in-6 {
-    animation: slideDownIn 0.5s ease-out 0.25s forwards;
-}
-
-.slide-in-7 {
-    animation: slideDownIn 0.5s ease-out 0.3s forwards;
-}
-
-.slide-in-8 {
-    animation: slideDownIn 0.5s ease-out 0.35s forwards;
-}
-
-.slide-in-9 {
-    animation: slideDownIn 0.5s ease-out 0.4s forwards;
-}
-
-.slide-in-10 {
-    animation: slideDownIn 0.5s ease-out 0.45s forwards;
+@for $i from 1 through 10 {
+    .slide-in-#{$i} {
+        animation: slideDownIn 0.5s ease-out #{$i*0.05}s forwards;
+    }
 }
 
 @keyframes progress-bar-load {
@@ -106,10 +73,10 @@
 
 @keyframes progress-bar-slide {
     from{
-      margin-left: -100%;
+        transform: translate3d(-100%, 0, 0);
     }
     to{
-      margin-left: 100%;
+        transform: translate3d(100%, 0, 0);
     }
 }
 
@@ -206,9 +173,7 @@ body {
     height: 0px;
     max-height: 100vh;
 	position: fixed;
-	top: 0;
-    right: 0;
-    background-color: var(--font-dark);
+	top: 0; right: 0;
     background-color: var(--orange-pure);
     z-index: 50;
 }
@@ -216,8 +181,7 @@ body {
 /* ----------- ARROW MOVE TO TOP ----------- */
 #arrow-up {
     position: fixed;
-    bottom: 3.5%;
-    right: 3.5%;
+    bottom: 3.5%; right: 3.5%;
     z-index: 50;
     i {
         font-size: 3.5rem;
