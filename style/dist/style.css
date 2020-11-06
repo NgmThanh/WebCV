@@ -31,6 +31,7 @@
   --material-lighter: #323135;
   --material-grey: #9C9C9C;
   --orange-pure: #F84525;
+  --orange-opacity: rgba(248, 69, 37, 0.5);
   --shadow-dark: #000000;
   --shadow-light: #cecece;
   --light-grey: #F2F2F2;
@@ -133,7 +134,7 @@
   box-sizing: border-box;
 }
 *::selection {
-  background-color: #DEE1E6;
+  background: #DEE1E6;
 }
 * img {
   max-width: 100%;
@@ -157,7 +158,7 @@ html {
 
 body {
   font-size: 1.4rem;
-  background-color: var(--material-lighter);
+  background: var(--material-lighter);
   color: var(--font-grey);
   font-weight: normal;
   padding: 2vh;
@@ -165,7 +166,7 @@ body {
 }
 
 .light-page {
-  background-color: var(--font-light);
+  background: var(--font-light);
   color: var(--font-dark);
 }
 
@@ -181,7 +182,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: var(--orange-pure);
+  background: var(--orange-pure);
   z-index: 50;
   transform: translate3d(0, 0, 0);
 }
@@ -209,14 +210,14 @@ body {
   align-items: flex-start;
 }
 .main-container .left-container {
-  width: 33.5%;
+  width: 35%;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: flex-start;
 }
 .main-container .right-container {
-  width: 63.5%;
+  width: 65%;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
@@ -226,15 +227,15 @@ body {
 .profile-section {
   width: 100%;
   transition: 0.5s all ease;
-  background-color: var(--background-dark);
+  background: var(--background-dark);
 }
 .profile-section .frame {
   width: 100%;
-  padding-top: 65%;
+  padding-top: 92.5%;
   /* same ratio picture */
   margin-bottom: 10px;
   position: relative;
-  background-color: var(--material-lighter);
+  background: var(--material-lighter);
 }
 .profile-section .frame__picture {
   position: absolute;
@@ -244,66 +245,120 @@ body {
   right: 0;
   overflow: hidden;
 }
-.profile-section .frame__name {
-  font-family: "Roboto";
-  font-size: 3rem;
-  color: var(--font-dark);
+.profile-section .frame__banner {
+  width: 100%;
+  height: 25%;
   position: absolute;
-  bottom: 5%;
-  left: 5%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--orange-opacity);
 }
-.profile-section .personal-data, .profile-section .skills-container, .profile-section .language-container, .profile-section .hobbies-container {
-  padding: 2.5% 6%;
+.profile-section .frame__title {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--font-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 2.5%;
+  left: 10%;
 }
-.profile-section .personal-data__field, .profile-section .personal-data a {
+.profile-section .left-section {
+  padding: 15px 0 15px 0;
+}
+.profile-section .left-section .left-inner__field, .profile-section .left-section a {
+  font-size: 1.7rem;
+  font-weight: normal;
   color: var(--font-grey);
-  padding: 15px 0 10px;
+  letter-spacing: 0.5px;
+  text-transform: normal;
+  padding: 15px 135px 15px 50px;
   vertical-align: middle;
+  text-align: right;
   word-break: break-all;
   transition: 0.4s ease;
-  font-weight: 600;
 }
-.profile-section .personal-data__field:hover, .profile-section .personal-data a:hover {
+.profile-section .left-section .left-inner__field a, .profile-section .left-section a a {
+  padding: 15px 0 15px 50px;
+}
+.profile-section .left-section .left-inner__field em, .profile-section .left-section a em {
+  font-weight: 500;
+  font-style: normal;
+}
+.profile-section .left-section .left-inner__field:hover, .profile-section .left-section a:hover {
   color: var(--font-light);
   transition: 0.4s ease;
 }
-.profile-section .personal-data i {
+.profile-section .left-section i {
   color: var(--orange-pure);
   width: 35px;
 }
-.profile-section .skills-container .main-title-left, .profile-section .language-container .main-title-left, .profile-section .hobbies-container .main-title-left {
-  font-size: 1.85rem;
-  padding: 12px 0;
-  margin: -5px 0 15px;
-  border-bottom: 1px solid var(--font-light);
-  letter-spacing: 3px;
-  text-transform: uppercase;
+.profile-section .formation-container {
+  padding-bottom: 25px;
+  margin-top: 10px;
+  text-align: right;
+  word-break: break-all;
+  background: var(--material-lighter);
 }
-.profile-section .skills-container .main-title-left i, .profile-section .language-container .main-title-left i, .profile-section .hobbies-container .main-title-left i {
+.profile-section .formation-container .formation-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--material-color);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 20px 10% 20px 0;
+  margin-bottom: 25px;
+  background: var(--orange-pure);
+}
+.profile-section .formation-container .formation-inner__field {
+  font-size: 1.7rem;
+  font-weight: normal;
+  color: var(--font-grey);
+  letter-spacing: 0.5px;
+  text-transform: normal;
+  padding: 25px 10% 25px 5%;
+}
+.profile-section .formation-container .formation-inner__field em {
+  font-weight: 500;
+  font-style: normal;
+}
+.profile-section .personal-data .main-title-left, .profile-section .skills-container .main-title-left, .profile-section .language-container .main-title-left, .profile-section .hobbies-container .main-title-left {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--orange-pure);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 12px 0;
+  margin: 0 10% 15px 0;
+  border-bottom: 2.5px solid var(--orange-opacity);
+  text-align: right;
+}
+.profile-section .personal-data .main-title-left i, .profile-section .skills-container .main-title-left i, .profile-section .language-container .main-title-left i, .profile-section .hobbies-container .main-title-left i {
   width: 35px;
   font-size: 2.25rem;
 }
-.profile-section .skills-container .skill, .profile-section .skills-container .language, .profile-section .skills-container .hobby, .profile-section .language-container .skill, .profile-section .language-container .language, .profile-section .language-container .hobby, .profile-section .hobbies-container .skill, .profile-section .hobbies-container .language, .profile-section .hobbies-container .hobby {
+.profile-section .personal-data .skill, .profile-section .personal-data .hobby, .profile-section .skills-container .skill, .profile-section .skills-container .hobby, .profile-section .language-container .skill, .profile-section .language-container .hobby, .profile-section .hobbies-container .skill, .profile-section .hobbies-container .hobby {
   padding: 10px 0;
   font-weight: normal;
   font-size: 1.6rem;
   font-weight: 600;
   transition: 0.4s ease;
 }
-.profile-section .skills-container .skill:hover, .profile-section .skills-container .language:hover, .profile-section .skills-container .hobby:hover, .profile-section .language-container .skill:hover, .profile-section .language-container .language:hover, .profile-section .language-container .hobby:hover, .profile-section .hobbies-container .skill:hover, .profile-section .hobbies-container .language:hover, .profile-section .hobbies-container .hobby:hover {
+.profile-section .personal-data .skill:hover, .profile-section .personal-data .hobby:hover, .profile-section .skills-container .skill:hover, .profile-section .skills-container .hobby:hover, .profile-section .language-container .skill:hover, .profile-section .language-container .hobby:hover, .profile-section .hobbies-container .skill:hover, .profile-section .hobbies-container .hobby:hover {
   color: var(--font-light);
   transition: 0.4s ease;
 }
-.profile-section .skills-container .skill__bar, .profile-section .skills-container .language__bar, .profile-section .skills-container .hobby__bar, .profile-section .language-container .skill__bar, .profile-section .language-container .language__bar, .profile-section .language-container .hobby__bar, .profile-section .hobbies-container .skill__bar, .profile-section .hobbies-container .language__bar, .profile-section .hobbies-container .hobby__bar {
+.profile-section .personal-data .skill__bar, .profile-section .personal-data .hobby__bar, .profile-section .skills-container .skill__bar, .profile-section .skills-container .hobby__bar, .profile-section .language-container .skill__bar, .profile-section .language-container .hobby__bar, .profile-section .hobbies-container .skill__bar, .profile-section .hobbies-container .hobby__bar {
   width: 100%;
   height: 18px;
-  background-color: var(--material-lighter);
+  background: var(--material-lighter);
   margin-top: 10px;
   position: relative;
   border-radius: 3px;
   box-shadow: 0px 0px 5px 1px var(--shadow-dark);
 }
-.profile-section .skills-container .skill__bar--inside, .profile-section .skills-container .language__bar--inside, .profile-section .skills-container .hobby__bar--inside, .profile-section .language-container .skill__bar--inside, .profile-section .language-container .language__bar--inside, .profile-section .language-container .hobby__bar--inside, .profile-section .hobbies-container .skill__bar--inside, .profile-section .hobbies-container .language__bar--inside, .profile-section .hobbies-container .hobby__bar--inside {
+.profile-section .personal-data .skill__bar--inside, .profile-section .personal-data .hobby__bar--inside, .profile-section .skills-container .skill__bar--inside, .profile-section .skills-container .hobby__bar--inside, .profile-section .language-container .skill__bar--inside, .profile-section .language-container .hobby__bar--inside, .profile-section .hobbies-container .skill__bar--inside, .profile-section .hobbies-container .hobby__bar--inside {
   height: 100%;
   width: 1px;
   border-radius: 3px;
@@ -313,20 +368,20 @@ body {
   transform: translate3d(0, 0, 0);
   overflow: hidden;
 }
-.profile-section .skills-container .skill__bar--inside::after, .profile-section .skills-container .language__bar--inside::after, .profile-section .skills-container .hobby__bar--inside::after, .profile-section .language-container .skill__bar--inside::after, .profile-section .language-container .language__bar--inside::after, .profile-section .language-container .hobby__bar--inside::after, .profile-section .hobbies-container .skill__bar--inside::after, .profile-section .hobbies-container .language__bar--inside::after, .profile-section .hobbies-container .hobby__bar--inside::after {
+.profile-section .personal-data .skill__bar--inside::after, .profile-section .personal-data .hobby__bar--inside::after, .profile-section .skills-container .skill__bar--inside::after, .profile-section .skills-container .hobby__bar--inside::after, .profile-section .language-container .skill__bar--inside::after, .profile-section .language-container .hobby__bar--inside::after, .profile-section .hobbies-container .skill__bar--inside::after, .profile-section .hobbies-container .hobby__bar--inside::after {
   display: block;
   content: "";
   height: 100%;
   width: 100%;
   background: linear-gradient(135deg, var(--material-color), var(--orange-pure));
 }
-.profile-section .skills-container .skill__bar--inside div, .profile-section .skills-container .language__bar--inside div, .profile-section .skills-container .hobby__bar--inside div, .profile-section .language-container .skill__bar--inside div, .profile-section .language-container .language__bar--inside div, .profile-section .language-container .hobby__bar--inside div, .profile-section .hobbies-container .skill__bar--inside div, .profile-section .hobbies-container .language__bar--inside div, .profile-section .hobbies-container .hobby__bar--inside div {
+.profile-section .personal-data .skill__bar--inside div, .profile-section .personal-data .hobby__bar--inside div, .profile-section .skills-container .skill__bar--inside div, .profile-section .skills-container .hobby__bar--inside div, .profile-section .language-container .skill__bar--inside div, .profile-section .language-container .hobby__bar--inside div, .profile-section .hobbies-container .skill__bar--inside div, .profile-section .hobbies-container .hobby__bar--inside div {
   color: var(--shadow-light);
   position: absolute;
   bottom: 27.5px;
   right: 0%;
 }
-.profile-section .skills-container .skill i, .profile-section .skills-container .language i, .profile-section .skills-container .hobby i, .profile-section .language-container .skill i, .profile-section .language-container .language i, .profile-section .language-container .hobby i, .profile-section .hobbies-container .skill i, .profile-section .hobbies-container .language i, .profile-section .hobbies-container .hobby i {
+.profile-section .personal-data .skill i, .profile-section .personal-data .hobby i, .profile-section .skills-container .skill i, .profile-section .skills-container .hobby i, .profile-section .language-container .skill i, .profile-section .language-container .hobby i, .profile-section .hobbies-container .skill i, .profile-section .hobbies-container .hobby i {
   width: 35px;
 }
 
@@ -389,7 +444,7 @@ body {
   text-transform: uppercase;
   font-size: 1.3rem;
   color: var(--font-light);
-  background-color: var(--material-color);
+  background: var(--material-color);
   border-radius: 4px;
   padding: 5px 8px;
   float: right;

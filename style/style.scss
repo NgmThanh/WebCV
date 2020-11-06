@@ -38,6 +38,7 @@
     --material-lighter: #323135;
     --material-grey: #9C9C9C;
     --orange-pure: #F84525;
+    --orange-opacity: rgba(248, 69, 37, 0.5);
     --shadow-dark: #000000;
     --shadow-light: #cecece;
     --light-grey: #F2F2F2;
@@ -73,6 +74,14 @@
 }
 
 /* =============== MIXINS =============== */
+
+@mixin font($size, $weight, $color, $letter-spacing, $text-transform) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    letter-spacing: $letter-spacing;
+    text-transform: $text-transform;
+}
 
 @mixin flex($flow, $justify, $align) {
     display: flex;
@@ -119,7 +128,7 @@
     scroll-behavior: smooth;
     box-sizing: border-box;
     &::selection {
-        background-color: #DEE1E6;
+        background: #DEE1E6;
     }
     img {
         max-width: 100%;
@@ -143,7 +152,7 @@ html {
 
 body {
     font-size: 1.4rem;
-    background-color: var(--material-lighter);
+    background: var(--material-lighter);
     color: var(--font-grey);
     font-weight: normal;
     padding: 2vh;
@@ -151,7 +160,7 @@ body {
 }
 
 .light-page {
-    background-color: var(--font-light);
+    background: var(--font-light);
     color: var(--font-dark);
 }
 
@@ -166,7 +175,7 @@ body {
     max-height: 100vh;
 	position: fixed;
 	top: 0; right: 0;
-    background-color: var(--orange-pure);
+    background: var(--orange-pure);
     z-index: 50;
     transform: translate3d(0, 0, 0);
 }
@@ -190,12 +199,12 @@ body {
     @include flex(row wrap, space-around, flex-start);
 
     .left-container {
-        width: 33.5%;
+        width: 35%;
         @include flex(row wrap, flex-start, flex-start);
     }
     
     .right-container {
-        width: 63.5%;
+        width: 65%;
         @include flex(column wrap, space-between, flex-start);
     }
 }
@@ -203,45 +212,59 @@ body {
 .profile-section {
     width: 100%;
     transition: 0.5s all ease;
-    background-color: var(--background-dark);
+    background: var(--background-dark);
 
     .frame {
         width: 100%;
-        padding-top: 65%;   /* same ratio picture */
+        padding-top: 92.5%;   /* same ratio picture */
         margin-bottom: 10px;
         position: relative;
-        background-color: var(--material-lighter);
+        background: var(--material-lighter);
         // profile picture
         &__picture {
             position: absolute;
             top: 0; left: 0; bottom: 0; right: 0;
             overflow: hidden;
         }
-        // name in profile picture
-        &__name {
-            font-family: "Roboto";
-            font-size: 3rem;
-            color: var(--font-dark);
+        // banner in profile
+        &__banner {
+            width: 100%;
+            height: 25%;
             position: absolute;
-            bottom: 5%;
-            left: 5%;
+            left: 0; bottom: 0; right: 0;
+            background: var(--orange-opacity);
+        }
+        // name in profile picture
+        &__title {
+            @include font(3rem, 500, var(--font-light), 2px, uppercase);
+            position: absolute;
+            bottom: 2.5%;
+            left: 10%;
         }
     }
 
-    .personal-data, .skills-container, .language-container, .hobbies-container {
-        padding: 2.5% 6%;
-    }
-
     // container of my informations
-    .personal-data {
+    .left-section {
+
+        padding: 15px 0 15px 0;
+    
         // line of information
-        &__field, a {
-            color: var(--font-grey);
-            padding: 15px 0 10px;
+        .left-inner__field, a {
+            @include font(1.7rem, normal, var(--font-grey), 0.5px, normal);
+            padding: 15px 135px 15px 50px;
             vertical-align: middle;
+            text-align: right;
             word-break: break-all;
             transition: 0.4s ease;
-            font-weight: 600;
+
+            a {
+                padding: 15px 0 15px 50px;
+            }
+
+            em {
+                font-weight: 500;
+                font-style: normal;
+            }
 
             &:hover {
                 color: var(--font-light);
@@ -255,16 +278,40 @@ body {
         }
     }
 
-    .skills-container, .language-container, .hobbies-container {
+    .formation-container {
+        padding-bottom: 25px;
+        margin-top: 10px;
+        text-align: right;
+        word-break: break-all;
+        background: var(--material-lighter);
+
+        .formation-title {
+            @include font(2.2rem, bold, var(--material-color), 4px, uppercase);
+            padding: 20px 10% 20px 0;
+            margin-bottom: 25px;
+            background: var(--orange-pure);
+        }
+
+        .formation-inner__field {
+            @include font(1.7rem, normal, var(--font-grey), 0.5px, normal);
+            padding: 25px 10% 25px 5%;
+
+            em {
+                font-weight: 500;
+                font-style: normal;
+            }
+        }
+    }
+
+    .personal-data, .skills-container, .language-container, .hobbies-container {
 
         // titles of left categories
         .main-title-left {
-            font-size: 1.85rem;
+            @include font(2.2rem, bold, var(--orange-pure), 4px, uppercase);
             padding: 12px 0;
-            margin: -5px 0 15px;
-            border-bottom: 1px solid var(--font-light);
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            margin: 0 10% 15px 0;
+            border-bottom: 2.5px solid var(--orange-opacity);
+            text-align: right;
 
             // icons of title
             i {
@@ -274,7 +321,7 @@ body {
         }
 
         // sections
-        .skill, .language, .hobby {
+        .skill, .hobby {
             padding: 10px 0;
             font-weight: normal;
             font-size: 1.6rem;
@@ -290,7 +337,7 @@ body {
             &__bar {
                 width: 100%;
                 height: 18px;
-                background-color: var(--material-lighter);
+                background: var(--material-lighter);
                 margin-top: 10px;
                 position: relative;
                 border-radius: 3px;
@@ -403,7 +450,7 @@ body {
             text-transform: uppercase;
             font-size: 1.3rem;
             color: var(--font-light);
-            background-color: var(--material-color);
+            background: var(--material-color);
             border-radius: 4px;
             padding: 5px 8px;            
             float: right;
