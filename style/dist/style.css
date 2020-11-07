@@ -229,14 +229,14 @@ body {
   transition: 0.5s all ease;
   background: var(--background-dark);
 }
-.profile-section .frame {
+
+.frame {
   width: 100%;
-  padding-top: 92.5%;
-  /* same ratio picture */
+  height: 448px;
   position: relative;
   background: var(--material-lighter);
 }
-.profile-section .frame__picture {
+.frame__picture {
   position: absolute;
   top: 0;
   left: 0;
@@ -244,29 +244,29 @@ body {
   right: 0;
   overflow: hidden;
 }
-.profile-section .frame__banner {
+.frame__banner {
   width: 100%;
   height: 25%;
+  padding: 18px 10% 15px;
   position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
   background: var(--orange-opacity);
 }
-.profile-section .frame__title {
+.frame__banner .frame__title {
   font-size: 3rem;
   font-weight: 500;
   color: var(--font-light);
   letter-spacing: 2px;
   text-transform: uppercase;
-  position: absolute;
-  bottom: 2.5%;
-  left: 10%;
+  vertical-align: middle;
 }
-.profile-section .left-section {
+
+.left-section {
   padding: 15px 0 15px 0;
 }
-.profile-section .left-section .main-title-left {
+.left-section .main-title-left {
   font-size: 2.2rem;
   font-weight: bold;
   color: var(--orange-pure);
@@ -277,11 +277,11 @@ body {
   border-bottom: 2.5px solid var(--orange-opacity);
   text-align: right;
 }
-.profile-section .left-section .main-title-left i {
+.left-section .main-title-left i {
   width: 35px;
   font-size: 2.25rem;
 }
-.profile-section .left-section .left-inner, .profile-section .left-section a {
+.left-section .left-inner, .left-section a {
   font-size: 1.7rem;
   font-weight: normal;
   color: var(--font-grey);
@@ -292,21 +292,21 @@ body {
   word-break: break-all;
   padding: 0px 10% 0px 10%;
 }
-.profile-section .left-section .left-inner em, .profile-section .left-section a em {
+.left-section .left-inner em, .left-section a em {
   font-weight: 500;
   font-style: normal;
 }
-.profile-section .left-section .left-inner a, .profile-section .left-section a a {
+.left-section .left-inner a, .left-section a a {
   padding: 15px 0 15px 0;
 }
-.profile-section .left-section .left-inner .contact__field, .profile-section .left-section a .contact__field {
+.left-section .left-inner .contact__field, .left-section a .contact__field {
   padding: 15px 0 15px 0;
 }
-.profile-section .left-section .left-inner .contact__field:hover, .profile-section .left-section a .contact__field:hover {
+.left-section .left-inner .contact__field:hover, .left-section a .contact__field:hover {
   color: var(--font-light);
   transition: 0.4s ease;
 }
-.profile-section .left-section .left-inner .skill, .profile-section .left-section a .skill {
+.left-section .left-inner .skill, .left-section a .skill {
   display: flex;
   flex-flow: nowrap;
   justify-content: space-between;
@@ -315,11 +315,11 @@ body {
   padding-top: 30px;
   transition: 0.4s ease;
 }
-.profile-section .left-section .left-inner .skill:hover, .profile-section .left-section a .skill:hover {
+.left-section .left-inner .skill:hover, .left-section a .skill:hover {
   color: var(--font-light);
   transition: 0.4s ease;
 }
-.profile-section .left-section .left-inner .skill__bar, .profile-section .left-section a .skill__bar {
+.left-section .left-inner .skill__bar, .left-section a .skill__bar {
   width: 60%;
   height: 25px;
   background: var(--material-lighter);
@@ -327,7 +327,7 @@ body {
   border-radius: 3px;
   box-shadow: 0px 0px 5px 1px var(--shadow-dark);
 }
-.profile-section .left-section .left-inner .skill__bar--inside, .profile-section .left-section a .skill__bar--inside {
+.left-section .left-inner .skill__bar--inside, .left-section a .skill__bar--inside {
   height: 100%;
   width: 1px;
   border-radius: 3px;
@@ -337,27 +337,28 @@ body {
   transform: translate3d(0, 0, 0);
   overflow: hidden;
 }
-.profile-section .left-section .left-inner .skill__bar--inside::after, .profile-section .left-section a .skill__bar--inside::after {
+.left-section .left-inner .skill__bar--inside::after, .left-section a .skill__bar--inside::after {
   display: block;
   content: "";
   height: 100%;
   width: 100%;
   background: linear-gradient(135deg, var(--material-color), var(--orange-pure));
 }
-.profile-section .left-section .left-inner .skill__bar--inside div, .profile-section .left-section a .skill__bar--inside div {
+.left-section .left-inner .skill__bar--inside div, .left-section a .skill__bar--inside div {
   display: none;
 }
-.profile-section .left-section .left-inner .hobby__field, .profile-section .left-section a .hobby__field {
+.left-section .left-inner .hobby__field, .left-section a .hobby__field {
   padding: 15px 20px;
 }
-.profile-section .formation-container {
+
+.formation-container {
   padding-bottom: 25px;
   margin-top: 10px;
   text-align: right;
   word-break: break-all;
   background: var(--material-lighter);
 }
-.profile-section .formation-container .formation-title {
+.formation-container .formation-title {
   font-size: 2.2rem;
   font-weight: bold;
   color: var(--material-color);
@@ -367,7 +368,7 @@ body {
   margin-bottom: 25px;
   background: var(--orange-pure);
 }
-.profile-section .formation-container .formation__field {
+.formation-container .formation__field {
   font-size: 1.7rem;
   font-weight: normal;
   color: var(--font-grey);
@@ -375,9 +376,73 @@ body {
   text-transform: normal;
   padding: 25px 10% 25px 5%;
 }
-.profile-section .formation-container .formation__field em {
+.formation-container .formation__field em {
   font-weight: 500;
   font-style: normal;
+}
+
+.right-header {
+  width: 100%;
+  height: 448px;
+  position: relative;
+  background: var(--background-light);
+}
+.right-header .right-header-top {
+  padding: 5% 0 10% 5%;
+}
+.right-header h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--font-dark);
+  letter-spacing: 3px;
+  text-transform: normal;
+  display: block;
+  margin: 12px 20px 12px;
+}
+.right-header h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--orange-pure);
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+.right-header p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--font-dark);
+  letter-spacing: 1px;
+  text-transform: normal;
+  display: block;
+  margin: 12px 20px 12px;
+}
+.right-header .subtitle {
+  width: 100%;
+  padding: 15px 20px 15px;
+  margin-top: 15px;
+  background: var(--material-color);
+}
+.right-header .right-header-banner {
+  width: 100%;
+  height: 25%;
+  padding: 18px calc(5% + 12px) 15px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--orange-opacity);
+}
+.right-header .right-header-banner span {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--font-dark);
+  letter-spacing: 1px;
+  text-transform: normal;
+  vertical-align: middle;
+}
+
+.work-section {
+  width: 100%;
+  transition: 0.5s all ease;
 }
 
 @media all and (max-width: 650px) {
