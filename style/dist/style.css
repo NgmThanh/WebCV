@@ -233,7 +233,6 @@ body {
   width: 100%;
   padding-top: 92.5%;
   /* same ratio picture */
-  margin-bottom: 10px;
   position: relative;
   background: var(--material-lighter);
 }
@@ -267,32 +266,89 @@ body {
 .profile-section .left-section {
   padding: 15px 0 15px 0;
 }
-.profile-section .left-section .left-inner__field, .profile-section .left-section a {
+.profile-section .left-section .main-title-left {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--orange-pure);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 12px 0;
+  margin: 0 10% 15px 0;
+  border-bottom: 2.5px solid var(--orange-opacity);
+  text-align: right;
+}
+.profile-section .left-section .main-title-left i {
+  width: 35px;
+  font-size: 2.25rem;
+}
+.profile-section .left-section .left-inner, .profile-section .left-section a {
   font-size: 1.7rem;
   font-weight: normal;
   color: var(--font-grey);
   letter-spacing: 0.5px;
   text-transform: normal;
-  padding: 15px 135px 15px 50px;
   vertical-align: middle;
   text-align: right;
   word-break: break-all;
-  transition: 0.4s ease;
+  padding: 0px 10% 0px 10%;
 }
-.profile-section .left-section .left-inner__field a, .profile-section .left-section a a {
-  padding: 15px 0 15px 50px;
-}
-.profile-section .left-section .left-inner__field em, .profile-section .left-section a em {
+.profile-section .left-section .left-inner em, .profile-section .left-section a em {
   font-weight: 500;
   font-style: normal;
 }
-.profile-section .left-section .left-inner__field:hover, .profile-section .left-section a:hover {
+.profile-section .left-section .left-inner a, .profile-section .left-section a a {
+  padding: 15px 0 15px 0;
+}
+.profile-section .left-section .left-inner .contact__field, .profile-section .left-section a .contact__field {
+  padding: 15px 0 15px 0;
+}
+.profile-section .left-section .left-inner .contact__field:hover, .profile-section .left-section a .contact__field:hover {
   color: var(--font-light);
   transition: 0.4s ease;
 }
-.profile-section .left-section i {
-  color: var(--orange-pure);
-  width: 35px;
+.profile-section .left-section .left-inner .skill, .profile-section .left-section a .skill {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  padding-top: 30px;
+  transition: 0.4s ease;
+}
+.profile-section .left-section .left-inner .skill:hover, .profile-section .left-section a .skill:hover {
+  color: var(--font-light);
+  transition: 0.4s ease;
+}
+.profile-section .left-section .left-inner .skill__bar, .profile-section .left-section a .skill__bar {
+  width: 60%;
+  height: 25px;
+  background: var(--material-lighter);
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 1px var(--shadow-dark);
+}
+.profile-section .left-section .left-inner .skill__bar--inside, .profile-section .left-section a .skill__bar--inside {
+  height: 100%;
+  width: 1px;
+  border-radius: 3px;
+  background: var(--material-color);
+  box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
+  animation: progress-bar-load 1.5s ease 0s forwards;
+  transform: translate3d(0, 0, 0);
+  overflow: hidden;
+}
+.profile-section .left-section .left-inner .skill__bar--inside::after, .profile-section .left-section a .skill__bar--inside::after {
+  display: block;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, var(--material-color), var(--orange-pure));
+}
+.profile-section .left-section .left-inner .skill__bar--inside div, .profile-section .left-section a .skill__bar--inside div {
+  display: none;
+}
+.profile-section .left-section .left-inner .hobby__field, .profile-section .left-section a .hobby__field {
+  padding: 15px 20px;
 }
 .profile-section .formation-container {
   padding-bottom: 25px;
@@ -311,7 +367,7 @@ body {
   margin-bottom: 25px;
   background: var(--orange-pure);
 }
-.profile-section .formation-container .formation-inner__field {
+.profile-section .formation-container .formation__field {
   font-size: 1.7rem;
   font-weight: normal;
   color: var(--font-grey);
@@ -319,158 +375,9 @@ body {
   text-transform: normal;
   padding: 25px 10% 25px 5%;
 }
-.profile-section .formation-container .formation-inner__field em {
+.profile-section .formation-container .formation__field em {
   font-weight: 500;
   font-style: normal;
-}
-.profile-section .personal-data .main-title-left, .profile-section .skills-container .main-title-left, .profile-section .language-container .main-title-left, .profile-section .hobbies-container .main-title-left {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: var(--orange-pure);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  padding: 12px 0;
-  margin: 0 10% 15px 0;
-  border-bottom: 2.5px solid var(--orange-opacity);
-  text-align: right;
-}
-.profile-section .personal-data .main-title-left i, .profile-section .skills-container .main-title-left i, .profile-section .language-container .main-title-left i, .profile-section .hobbies-container .main-title-left i {
-  width: 35px;
-  font-size: 2.25rem;
-}
-.profile-section .personal-data .skill, .profile-section .personal-data .hobby, .profile-section .skills-container .skill, .profile-section .skills-container .hobby, .profile-section .language-container .skill, .profile-section .language-container .hobby, .profile-section .hobbies-container .skill, .profile-section .hobbies-container .hobby {
-  padding: 10px 0;
-  font-weight: normal;
-  font-size: 1.6rem;
-  font-weight: 600;
-  transition: 0.4s ease;
-}
-.profile-section .personal-data .skill:hover, .profile-section .personal-data .hobby:hover, .profile-section .skills-container .skill:hover, .profile-section .skills-container .hobby:hover, .profile-section .language-container .skill:hover, .profile-section .language-container .hobby:hover, .profile-section .hobbies-container .skill:hover, .profile-section .hobbies-container .hobby:hover {
-  color: var(--font-light);
-  transition: 0.4s ease;
-}
-.profile-section .personal-data .skill__bar, .profile-section .personal-data .hobby__bar, .profile-section .skills-container .skill__bar, .profile-section .skills-container .hobby__bar, .profile-section .language-container .skill__bar, .profile-section .language-container .hobby__bar, .profile-section .hobbies-container .skill__bar, .profile-section .hobbies-container .hobby__bar {
-  width: 100%;
-  height: 18px;
-  background: var(--material-lighter);
-  margin-top: 10px;
-  position: relative;
-  border-radius: 3px;
-  box-shadow: 0px 0px 5px 1px var(--shadow-dark);
-}
-.profile-section .personal-data .skill__bar--inside, .profile-section .personal-data .hobby__bar--inside, .profile-section .skills-container .skill__bar--inside, .profile-section .skills-container .hobby__bar--inside, .profile-section .language-container .skill__bar--inside, .profile-section .language-container .hobby__bar--inside, .profile-section .hobbies-container .skill__bar--inside, .profile-section .hobbies-container .hobby__bar--inside {
-  height: 100%;
-  width: 1px;
-  border-radius: 3px;
-  background: var(--material-color);
-  box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
-  animation: progress-bar-load 1.5s ease 0s forwards;
-  transform: translate3d(0, 0, 0);
-  overflow: hidden;
-}
-.profile-section .personal-data .skill__bar--inside::after, .profile-section .personal-data .hobby__bar--inside::after, .profile-section .skills-container .skill__bar--inside::after, .profile-section .skills-container .hobby__bar--inside::after, .profile-section .language-container .skill__bar--inside::after, .profile-section .language-container .hobby__bar--inside::after, .profile-section .hobbies-container .skill__bar--inside::after, .profile-section .hobbies-container .hobby__bar--inside::after {
-  display: block;
-  content: "";
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(135deg, var(--material-color), var(--orange-pure));
-}
-.profile-section .personal-data .skill__bar--inside div, .profile-section .personal-data .hobby__bar--inside div, .profile-section .skills-container .skill__bar--inside div, .profile-section .skills-container .hobby__bar--inside div, .profile-section .language-container .skill__bar--inside div, .profile-section .language-container .hobby__bar--inside div, .profile-section .hobbies-container .skill__bar--inside div, .profile-section .hobbies-container .hobby__bar--inside div {
-  color: var(--shadow-light);
-  position: absolute;
-  bottom: 27.5px;
-  right: 0%;
-}
-.profile-section .personal-data .skill i, .profile-section .personal-data .hobby i, .profile-section .skills-container .skill i, .profile-section .skills-container .hobby i, .profile-section .language-container .skill i, .profile-section .language-container .hobby i, .profile-section .hobbies-container .skill i, .profile-section .hobbies-container .hobby i {
-  width: 35px;
-}
-
-.work-section, .formation-section {
-  width: 100%;
-  padding: 5%;
-  transition: 0.5s all ease;
-}
-.work-section .fa-download, .formation-section .fa-download {
-  float: right;
-  margin: 7.5px;
-  font-size: 2rem;
-  color: var(--orange-pure);
-  transition: 0.5s ease;
-  position: relative;
-  z-index: 50;
-}
-.work-section .fa-download:hover, .formation-section .fa-download:hover {
-  color: var(--material-color);
-  transition: 0.5s ease;
-}
-.work-section .main-title-right, .formation-section .main-title-right {
-  text-transform: uppercase;
-  font-size: 2.4rem;
-  display: block;
-}
-.work-section .main-title-right i, .formation-section .main-title-right i {
-  width: 50px;
-  font-size: 2.5rem;
-}
-.work-section .work-container, .work-section .formation-container, .formation-section .work-container, .formation-section .formation-container {
-  padding: 2.5% 0;
-  border-bottom: 1px solid var(--material-color);
-  letter-spacing: 0.2px;
-}
-.work-section .work-container h1, .work-section .work-container h2, .work-section .work-container p, .work-section .formation-container h1, .work-section .formation-container h2, .work-section .formation-container p, .formation-section .work-container h1, .formation-section .work-container h2, .formation-section .work-container p, .formation-section .formation-container h1, .formation-section .formation-container h2, .formation-section .formation-container p {
-  display: block;
-  margin: 5px 0;
-}
-.work-section .work-container h1, .work-section .formation-container h1, .formation-section .work-container h1, .formation-section .formation-container h1 {
-  font-size: 2rem;
-  color: var(--orange-pure);
-}
-.work-section .work-container h1 a, .work-section .formation-container h1 a, .formation-section .work-container h1 a, .formation-section .formation-container h1 a {
-  font-weight: 600;
-  font-size: 2rem;
-  color: var(--orange-pure);
-}
-.work-section .work-container h1 i, .work-section .formation-container h1 i, .formation-section .work-container h1 i, .formation-section .formation-container h1 i {
-  font-size: 1.8rem;
-  color: var(--calendar-color);
-  padding: 0 10px;
-}
-.work-section .work-container h2, .work-section .formation-container h2, .formation-section .work-container h2, .formation-section .formation-container h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--calendar-color);
-}
-.work-section .work-container div, .work-section .formation-container div, .formation-section .work-container div, .formation-section .formation-container div {
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  color: var(--font-light);
-  background: var(--material-color);
-  border-radius: 4px;
-  padding: 5px 8px;
-  float: right;
-  margin-top: -5px;
-  margin-left: 5px;
-}
-@media all and (max-width: 650px) {
-  .work-section .work-container div, .work-section .formation-container div, .formation-section .work-container div, .formation-section .formation-container div {
-    float: none;
-    display: inline-block;
-    margin: 5px 5px 5px 0;
-  }
-}
-.work-section .work-container i, .work-section .formation-container i, .formation-section .work-container i, .formation-section .formation-container i {
-  width: 27.5px;
-}
-.work-section .work-container p, .work-section .formation-container p, .formation-section .work-container p, .formation-section .formation-container p {
-  font-size: 1.5rem;
-}
-.work-section .border-last, .formation-section .border-last {
-  border-bottom: 0px;
-  padding-bottom: 0;
-}
-
-.formation-section {
-  margin-top: 2%;
 }
 
 @media all and (max-width: 650px) {

@@ -2,8 +2,8 @@
 
 /* -------- SKILLS BARS ------- */
 
-// html collection of classes "skill__bar--inside, .language__bar--inside"
-var classSkills = document.querySelectorAll('.skill__bar--inside, .language__bar--inside');
+// html collection of classes "skill__bar--inside"
+var classSkills = document.querySelectorAll('.skill__bar--inside');
 var skills = new Array();
 
 // array id of skills 

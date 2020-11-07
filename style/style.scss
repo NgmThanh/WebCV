@@ -217,7 +217,6 @@ body {
     .frame {
         width: 100%;
         padding-top: 92.5%;   /* same ratio picture */
-        margin-bottom: 10px;
         position: relative;
         background: var(--material-lighter);
         // profile picture
@@ -247,34 +246,101 @@ body {
     .left-section {
 
         padding: 15px 0 15px 0;
-    
-        // line of information
-        .left-inner__field, a {
+
+        // titles of left categories
+        .main-title-left {
+            @include font(2.2rem, bold, var(--orange-pure), 4px, uppercase);
+            padding: 12px 0;
+            margin: 0 10% 15px 0;
+            border-bottom: 2.5px solid var(--orange-opacity);
+            text-align: right;
+            // background: red;
+
+            // icons of title
+            i {
+                width: 35px;
+                font-size: 2.25rem;
+            }
+        }
+
+        .left-inner, a {
             @include font(1.7rem, normal, var(--font-grey), 0.5px, normal);
-            padding: 15px 135px 15px 50px;
             vertical-align: middle;
             text-align: right;
             word-break: break-all;
-            transition: 0.4s ease;
+            padding: 0px 10% 0px 10%;
 
-            a {
-                padding: 15px 0 15px 50px;
-            }
-
+            // bold names
             em {
                 font-weight: 500;
                 font-style: normal;
             }
 
-            &:hover {
-                color: var(--font-light);
-                transition: 0.4s ease;
+            a {
+                padding: 15px 0 15px 0;
             }
-        }
-        // icons of personal data
-        i {
-            color: var(--orange-pure);
-            width: 35px;
+
+
+            .contact__field {
+                padding: 15px 0 15px 0;
+
+                &:hover {
+                    color: var(--font-light);
+                    transition: 0.4s ease;
+                }
+            }
+
+            .skill {
+                @include flex(nowrap, space-between, center);
+                font-weight: 600;
+                padding-top: 30px;
+                transition: 0.4s ease;
+
+                &:hover {
+                    color: var(--font-light);
+                    transition: 0.4s ease;
+                }
+
+                // container bar
+                &__bar {
+                    width: 60%;
+                    height: 25px;
+                    background: var(--material-lighter);
+                    position: relative;
+                    border-radius: 3px;
+                    box-shadow: 0px 0px 5px 1px var(--shadow-dark);
+
+                    // bar inside
+                    &--inside {
+                        height: 100%;
+                        width: 1px;
+                        border-radius: 3px;
+                        background: var(--material-color);
+                        box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
+                        animation: progress-bar-load 1.5s ease 0s forwards;
+                        transform: translate3d(0, 0, 0);
+                        overflow: hidden;
+
+                        // after for animation progress bar
+                        &::after {
+                            display: block;
+                            content: "";
+                            height: 100%;
+                            width: 100%;
+                            background: linear-gradient(135deg,  var(--material-color), var(--orange-pure));
+                        }
+
+                        // percent
+                        div {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .hobby__field {
+                padding: 15px 20px;
+            }
         }
     }
 
@@ -292,7 +358,7 @@ body {
             background: var(--orange-pure);
         }
 
-        .formation-inner__field {
+        .formation__field {
             @include font(1.7rem, normal, var(--font-grey), 0.5px, normal);
             padding: 25px 10% 25px 5%;
 
@@ -302,187 +368,111 @@ body {
             }
         }
     }
-
-    .personal-data, .skills-container, .language-container, .hobbies-container {
-
-        // titles of left categories
-        .main-title-left {
-            @include font(2.2rem, bold, var(--orange-pure), 4px, uppercase);
-            padding: 12px 0;
-            margin: 0 10% 15px 0;
-            border-bottom: 2.5px solid var(--orange-opacity);
-            text-align: right;
-
-            // icons of title
-            i {
-                width: 35px;
-                font-size: 2.25rem;
-            }
-        }
-
-        // sections
-        .skill, .hobby {
-            padding: 10px 0;
-            font-weight: normal;
-            font-size: 1.6rem;
-            font-weight: 600;
-            transition: 0.4s ease;
-
-            &:hover {
-                color: var(--font-light);
-                transition: 0.4s ease;
-            }
-
-            // container bar
-            &__bar {
-                width: 100%;
-                height: 18px;
-                background: var(--material-lighter);
-                margin-top: 10px;
-                position: relative;
-                border-radius: 3px;
-                box-shadow: 0px 0px 5px 1px var(--shadow-dark);
-
-                // bar inside
-                &--inside {
-                    height: 100%;
-                    width: 1px;
-                    border-radius: 3px;
-                    background: var(--material-color);
-                    box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
-                    animation: progress-bar-load 1.5s ease 0s forwards;
-                    transform: translate3d(0, 0, 0);
-                    overflow: hidden;
-
-                    // after for animation progress bar
-                    &::after {
-                        display: block;
-                        content: "";
-                        height: 100%;
-                        width: 100%;
-                        background: linear-gradient(135deg,  var(--material-color), var(--orange-pure));
-                    }
-
-                    // percent
-                    div {
-                        color: var(--shadow-light);
-                        position: absolute;
-                        bottom: 27.5px;
-                        right: 0%;
-                    }
-                }
-            }
-            // icons
-            i {
-                width: 35px;
-            }
-        }
-    }
 }
 
-.work-section, .formation-section {
-    width: 100%;
-    padding: 5%;
-    transition: 0.5s all ease;
+// .work-section, .formation-section {
+//     width: 100%;
+//     padding: 5%;
+//     transition: 0.5s all ease;
 
-    // download cv
-    .fa-download {
-        float: right;
-        margin: 7.5px;
-        font-size: 2rem;
-        color: var(--orange-pure);
-        transition: 0.5s ease;
-        position: relative;
-        z-index: 50;
+//     // download cv
+//     .fa-download {
+//         float: right;
+//         margin: 7.5px;
+//         font-size: 2rem;
+//         color: var(--orange-pure);
+//         transition: 0.5s ease;
+//         position: relative;
+//         z-index: 50;
         
-        &:hover {
-            color: var(--material-color);
-            transition: 0.5s ease;
-        }
-    }
+//         &:hover {
+//             color: var(--material-color);
+//             transition: 0.5s ease;
+//         }
+//     }
 
-    // big title experiences / formations
-    .main-title-right {
-        text-transform: uppercase;
-        font-size: 2.4rem;
-        display: block;
-        // icon
-        i {
-            width: 50px;
-            font-size: 2.5rem;
-        }
-    }
+//     // big title experiences / formations
+//     .main-title-right {
+//         text-transform: uppercase;
+//         font-size: 2.4rem;
+//         display: block;
+//         // icon
+//         i {
+//             width: 50px;
+//             font-size: 2.5rem;
+//         }
+//     }
 
-    .work-container, .formation-container {
-        padding: 2.5% 0;  
-        border-bottom: 1px solid var(--material-color);
-        letter-spacing: 0.2px;
+//     .work-container, .formation-container {
+//         padding: 2.5% 0;  
+//         border-bottom: 1px solid var(--material-color);
+//         letter-spacing: 0.2px;
 
-        h1, h2, p {
-            display: block;
-            margin: 5px 0;
-        }
-        // titles of works / formations
-        h1 {
-            font-size: 2rem;
-            color: var(--orange-pure);
-            // titles with links
-            a {
-                font-weight: 600;
-                font-size: 2rem;
-                color: var(--orange-pure);
-            }
-            // redirections
-            i {
-                font-size: 1.8rem;
-                color: var(--calendar-color);
-                padding: 0 10px;
-            }
-        }
-        // date with calendar icon
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--calendar-color);
-        }
-        // languages used
-        div {
-            text-transform: uppercase;
-            font-size: 1.3rem;
-            color: var(--font-light);
-            background: var(--material-color);
-            border-radius: 4px;
-            padding: 5px 8px;            
-            float: right;
-            margin-top: -5px;
-            margin-left: 5px;
+//         h1, h2, p {
+//             display: block;
+//             margin: 5px 0;
+//         }
+//         // titles of works / formations
+//         h1 {
+//             font-size: 2rem;
+//             color: var(--orange-pure);
+//             // titles with links
+//             a {
+//                 font-weight: 600;
+//                 font-size: 2rem;
+//                 color: var(--orange-pure);
+//             }
+//             // redirections
+//             i {
+//                 font-size: 1.8rem;
+//                 color: var(--calendar-color);
+//                 padding: 0 10px;
+//             }
+//         }
+//         // date with calendar icon
+//         h2 {
+//             font-size: 1.5rem;
+//             font-weight: 700;
+//             color: var(--calendar-color);
+//         }
+//         // languages used
+//         div {
+//             text-transform: uppercase;
+//             font-size: 1.3rem;
+//             color: var(--font-light);
+//             background: var(--material-color);
+//             border-radius: 4px;
+//             padding: 5px 8px;            
+//             float: right;
+//             margin-top: -5px;
+//             margin-left: 5px;
 
-            @media all and (max-width: 650px) {
-                float: none;
-                display: inline-block;
-                margin: 5px 5px 5px 0;
-            }
-        }
-        i {
-            width: 27.5px;
-        }
-        // description
-        p {
-            font-size: 1.5rem;
-        }
+//             @media all and (max-width: 650px) {
+//                 float: none;
+//                 display: inline-block;
+//                 margin: 5px 5px 5px 0;
+//             }
+//         }
+//         i {
+//             width: 27.5px;
+//         }
+//         // description
+//         p {
+//             font-size: 1.5rem;
+//         }
         
-    }
+//     }
 
-    // to take off border bottom if last container
-    .border-last {
-        border-bottom: 0px;
-        padding-bottom: 0;
-    }
-}
+//     // to take off border bottom if last container
+//     .border-last {
+//         border-bottom: 0px;
+//         padding-bottom: 0;
+//     }
+// }
 
-.formation-section {
-    margin-top: 2%;
-}
+// .formation-section {
+//     margin-top: 2%;
+// }
 
 // mobile display
 @media all and (max-width: 650px) {
