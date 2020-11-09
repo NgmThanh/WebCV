@@ -26,6 +26,12 @@
     font-weight: 700;
 }
 
+@font-face {
+    font-family: "Code Pro Demo";
+    src: url("../font/Code Pro Demo/Code Pro Demo.otf") format("truetype");
+    font-weight: 600;
+}
+
 /* =============== COLORS =============== */
 
 :root {
@@ -228,7 +234,7 @@ body {
         background: var(--orange-opacity);
 
         .frame__title {
-            @include font(3rem, 500, var(--font-light), 2px, uppercase);
+            @include font(3rem, 600, var(--font-light), 2px, uppercase);
             line-height: 3rem;
         }
     }
@@ -357,6 +363,7 @@ body {
         padding-left: 50px;
     }
     h1 {
+        font-family: "Code Pro Demo";
         @include font(5rem, bold, var(--font-dark), 3px, normal);
     }
     .subtitle {
@@ -417,7 +424,7 @@ body {
     padding: 0 50px 0;
 
     &-date {
-        padding: 36px 5px 20px 5px;
+        padding: 30px 5px 20px 5px;
         width: 30%;
         border-bottom: 3px solid var(--font-dark);
         word-break: break-all;
@@ -435,11 +442,16 @@ body {
         border-left: 3px solid var(--font-dark);
         border-bottom: 3px solid var(--font-dark);
         h1, a {
-            @include font(2.5rem, bold, var(--font-dark), 2px, none);
-            margin-bottom: 10px;
+            font-family: "Code Pro Demo", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            @include font(2.2rem, bold, var(--font-dark), 1px, uppercase);
+        }
+        h2 {
+            @include font(2rem, bold, var(--font-dark), 1px, normal);
+            margin-bottom: 5px;
         }
         p {
             @include font(1.6rem, normal, var(--font-dark), 1px, none);
+            margin-top: 5px;
         }
         img {
             width: 25px;
