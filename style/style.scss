@@ -243,89 +243,87 @@ body {
 // container of my informations
 .left-section {
     padding: 15px 0 15px 0;
-    // titles of left categories
-    .main-title-left {
-        @include font(2.2rem, bold, var(--orange-pure), 4px, uppercase);
-        padding: 12px 0;
-        margin: 0 50px 15px 0;
-        border-bottom: 4px solid var(--orange-opacity);
-        text-align: right;
-    }
-    .left-inner, a {
-        @include font(1.7rem, normal, var(--font-grey), 0.5px, normal);
-        text-align: right;
-        word-break: break-all;
-        padding: 0px 50px 0px 50px;
-        // bold names
-        em {
-            font-weight: 500;
-            font-style: normal;
-        }
-        a {
-            padding: 15px 0 15px 0;
-        }
-        // CONTACT
-        .contact__field {
-            width: 100%;
-            padding: 20px 0 20px 0;
-            @include flex(row nowrap, flex-end, center);
+}
 
-            img {
-                width: 40px; height: 40px;
-                margin-left: 20px;
-            }
-            &:hover {
-                color: var(--font-light);
-                transition: 0.4s ease;
-            }
+// titles of left categories
+.main-title-left {
+    @include font(2.2rem, bold, var(--orange-pure), 4px, uppercase);
+    padding: 12px 0;
+    margin: 0 50px 15px 0;
+    border-bottom: 4px solid var(--orange-opacity);
+    text-align: right;
+}
+
+.left-inner, .left-inner a {
+    @include font(1.7rem, normal, var(--font-grey), 0.5px, normal);
+    text-align: right;
+    word-break: break-all;
+    padding: 0px 50px 0px 50px;
+    // bold names
+    em {
+        font-weight: 500;
+        font-style: normal;
+    }
+    a {
+        padding: 15px 0 15px 0;
+    }
+    // CONTACT
+    .contact__field {
+        width: 100%;
+        padding: 20px 0 20px 0;
+        @include flex(row nowrap, flex-end, center);
+
+        img {
+            width: 40px; height: 40px;
+            margin-left: 20px;
         }
-        // SKILLS
-        .skill {
-            @include flex(nowrap, space-between, center);
-            font-weight: 600;
-            padding-top: 30px;
+        &:hover {
+            color: var(--font-light);
             transition: 0.4s ease;
-            &:hover {
-                color: var(--font-light);
-                transition: 0.4s ease;
-            }
-            // container bar
-            &__bar {
-                width: 60%;
-                height: 25px;
-                background: var(--material-lighter);
-                position: relative;
+        }
+    }
+    // SKILLS
+    .skill {
+        @include flex(nowrap, space-between, center);
+        font-weight: 600;
+        padding-top: 30px;
+        transition: 0.4s ease;
+        // container bar
+        &__bar {
+            width: 60%;
+            height: 25px;
+            background: var(--material-lighter);
+            position: relative;
+            border-radius: 3px;
+            box-shadow: 0px 0px 5px 1px var(--shadow-dark);
+            // bar inside
+            &--inside {
+                height: 100%;
+                width: 1px;
                 border-radius: 3px;
-                box-shadow: 0px 0px 5px 1px var(--shadow-dark);
-                // bar inside
-                &--inside {
+                background: var(--material-color);
+                box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
+                animation: progress-bar-load 1.5s ease 0s forwards;
+                transform: translate3d(0, 0, 0);
+                overflow: hidden;
+                // after for animation progress bar
+                &::after {
+                    display: block;
+                    content: "";
                     height: 100%;
-                    width: 1px;
-                    border-radius: 3px;
-                    background: var(--material-color);
-                    box-shadow: 0px 0px 2.5px 1px var(--shadow-dark);
-                    animation: progress-bar-load 1.5s ease 0s forwards;
-                    transform: translate3d(0, 0, 0);
-                    overflow: hidden;
-                    // after for animation progress bar
-                    &::after {
-                        display: block;
-                        content: "";
-                        height: 100%;
-                        width: 100%;
-                        background: linear-gradient(135deg,  var(--material-color), var(--orange-pure));
-                    }
-                    // percent
-                    div {
-                        display: none;
-                    }
+                    width: 100%;
+                    background: linear-gradient(135deg,  var(--material-color), var(--orange-pure));
+                }
+                // percent
+                div {
+                    display: none;
                 }
             }
         }
-        // HOBBIES
-        .hobby__field {
-            padding: 15px 0 15px 0;
-        }
+    }
+    // HOBBIES
+    .hobby__field {
+        padding: 15px 0 15px 0;
     }
 }
 
@@ -362,6 +360,7 @@ body {
         padding-top: 5%;
         padding-left: 50px;
     }
+    // My name
     h1 {
         font-family: "Code Pro Demo";
         @include font(5rem, bold, var(--font-dark), 3px, normal);
@@ -372,9 +371,11 @@ body {
         margin-top: 15px;
         background: var(--material-color);
     }
+    // my job
     h2 {
         @include font(2.5rem, 500, var(--orange-pure), 3.5px, uppercase);
     }
+    // my adress
     p {
         @include font(1.6rem, 500, var(--font-dark), 1px, normal);
         display: block;
@@ -386,7 +387,7 @@ body {
         position: absolute;
         left: 0; bottom: 0; right: 0;
         background: var(--orange-opacity);
-
+        // my description
         span {
             @include font(1.6rem, 500, var(--font-dark), 1px, normal);
             line-height: 1.6rem;
@@ -402,7 +403,7 @@ body {
 
 .fa-download {
     float: right;
-    margin: calc(5% + 20px);
+    margin: 50px;
     font-size: 2rem;
     color: var(--orange-pure);
     transition: 0.5s ease;
@@ -431,9 +432,6 @@ body {
         h2 {
             @include font(1.5rem, bold, var(--font-dark), 1px, none);
         }
-        i {
-            width: 25px;
-        }
     }
 
     &-description {
@@ -441,18 +439,23 @@ body {
         padding: 25px 0 30px 35px;
         border-left: 3px solid var(--font-dark);
         border-bottom: 3px solid var(--font-dark);
+        // title of experience
         h1, a {
             font-family: "Code Pro Demo", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             @include font(2.2rem, bold, var(--font-dark), 1px, uppercase);
+            
         }
+        // company name
         h2 {
             @include font(2rem, bold, var(--font-dark), 1px, normal);
             margin-bottom: 5px;
         }
+        // description of experience
         p {
             @include font(1.6rem, normal, var(--font-dark), 1px, none);
             margin-top: 5px;
         }
+        // icon redirection
         img {
             width: 25px;
             margin-left: 10px;
