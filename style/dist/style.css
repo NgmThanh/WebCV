@@ -205,25 +205,30 @@ body {
   justify-content: space-around;
   align-items: flex-start;
 }
-.main-container .left-container {
-  width: 35%;
+.main-container .top-container {
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.main-container .right-container {
-  width: 65%;
+.main-container .bot-container {
+  width: 100%;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
+  background: transparent;
 }
 
-.profile-section {
-  width: 100%;
-  transition: 0.5s all ease;
+.left-profile {
+  width: 35%;
   background: var(--background-dark);
+}
+
+.right-profile {
+  width: 65%;
+  background: var(--background-light);
 }
 
 .frame {
@@ -258,7 +263,68 @@ body {
   line-height: 3rem;
 }
 
-.left-section {
+.right-profile {
+  height: 450px;
+  position: relative;
+}
+.right-profile .right-profile-top {
+  padding-top: 5%;
+  padding-left: 50px;
+}
+.right-profile h1 {
+  font-family: "Code Pro Demo";
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--font-dark);
+  letter-spacing: 3px;
+  text-transform: normal;
+}
+.right-profile .subtitle {
+  width: 100%;
+  padding: 10px 20px 10px;
+  margin-top: 15px;
+  background: var(--material-color);
+}
+.right-profile h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--orange-pure);
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+.right-profile p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--font-dark);
+  letter-spacing: 1px;
+  text-transform: normal;
+  display: block;
+  margin-top: 20px;
+}
+.right-profile .right-profile-banner {
+  width: 100%;
+  height: 25%;
+  padding: 25px 50px 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--orange-opacity);
+}
+.right-profile .right-profile-banner span {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--font-dark);
+  letter-spacing: 1px;
+  text-transform: normal;
+  line-height: 1.6rem;
+}
+
+.info-container {
+  width: 35%;
+  background: var(--material-color);
+}
+.info-container .left-info-section {
   padding: 15px 0 15px 0;
 }
 
@@ -274,7 +340,7 @@ body {
   text-align: right;
 }
 
-.left-inner, .left-inner a {
+.left-info-inner, .left-info-inner a {
   font-size: 1.7rem;
   font-weight: normal;
   color: var(--font-grey);
@@ -284,14 +350,14 @@ body {
   word-break: break-all;
   padding: 0px 50px 0px 50px;
 }
-.left-inner em, .left-inner a em {
+.left-info-inner em, .left-info-inner a em {
   font-weight: 500;
   font-style: normal;
 }
-.left-inner a, .left-inner a a {
+.left-info-inner a, .left-info-inner a a {
   padding: 15px 0 15px 0;
 }
-.left-inner .contact__field, .left-inner a .contact__field {
+.left-info-inner .contact__field, .left-info-inner a .contact__field {
   width: 100%;
   padding: 20px 0 20px 0;
   display: flex;
@@ -299,16 +365,16 @@ body {
   justify-content: flex-end;
   align-items: center;
 }
-.left-inner .contact__field img, .left-inner a .contact__field img {
+.left-info-inner .contact__field img, .left-info-inner a .contact__field img {
   width: 40px;
   height: 40px;
   margin-left: 20px;
 }
-.left-inner .contact__field:hover, .left-inner a .contact__field:hover {
+.left-info-inner .contact__field:hover, .left-info-inner a .contact__field:hover {
   color: var(--font-light);
   transition: 0.4s ease;
 }
-.left-inner .skill, .left-inner a .skill {
+.left-info-inner .skill, .left-info-inner a .skill {
   display: flex;
   flex-flow: nowrap;
   justify-content: space-between;
@@ -317,7 +383,7 @@ body {
   padding-top: 30px;
   transition: 0.4s ease;
 }
-.left-inner .skill__bar, .left-inner a .skill__bar {
+.left-info-inner .skill__bar, .left-info-inner a .skill__bar {
   width: 60%;
   height: 25px;
   background: var(--material-lighter);
@@ -325,7 +391,7 @@ body {
   border-radius: 3px;
   box-shadow: 0px 0px 5px 1px var(--shadow-dark);
 }
-.left-inner .skill__bar--inside, .left-inner a .skill__bar--inside {
+.left-info-inner .skill__bar--inside, .left-info-inner a .skill__bar--inside {
   height: 100%;
   width: 1px;
   border-radius: 3px;
@@ -335,28 +401,28 @@ body {
   transform: translate3d(0, 0, 0);
   overflow: hidden;
 }
-.left-inner .skill__bar--inside::after, .left-inner a .skill__bar--inside::after {
+.left-info-inner .skill__bar--inside::after, .left-info-inner a .skill__bar--inside::after {
   display: block;
   content: "";
   height: 100%;
   width: 100%;
   background: linear-gradient(135deg, var(--material-color), var(--orange-pure));
 }
-.left-inner .skill__bar--inside div, .left-inner a .skill__bar--inside div {
+.left-info-inner .skill__bar--inside div, .left-info-inner a .skill__bar--inside div {
   display: none;
 }
-.left-inner .hobby__field, .left-inner a .hobby__field {
+.left-info-inner .hobby__field, .left-info-inner a .hobby__field {
   padding: 15px 0 15px 0;
 }
 
-.formation-container {
+.info-formation {
   padding-bottom: 25px;
   margin-top: 20px;
   text-align: right;
   word-break: break-all;
   background: var(--material-lighter);
 }
-.formation-container .formation-title {
+.info-formation .formation-title {
   font-size: 2.2rem;
   font-weight: bold;
   color: var(--material-color);
@@ -366,7 +432,7 @@ body {
   margin-bottom: 25px;
   background: var(--orange-pure);
 }
-.formation-container .formation__field {
+.info-formation .formation__field {
   font-size: 1.7rem;
   font-weight: normal;
   color: var(--font-grey);
@@ -374,71 +440,13 @@ body {
   text-transform: normal;
   padding: 25px 50px 25px 5%;
 }
-.formation-container .formation__field em {
+.info-formation .formation__field em {
   font-weight: 500;
   font-style: normal;
 }
 
-.right-header {
-  width: 100%;
-  height: 450px;
-  position: relative;
-}
-.right-header .right-header-top {
-  padding-top: 5%;
-  padding-left: 50px;
-}
-.right-header h1 {
-  font-family: "Code Pro Demo";
-  font-size: 5rem;
-  font-weight: bold;
-  color: var(--font-dark);
-  letter-spacing: 3px;
-  text-transform: normal;
-}
-.right-header .subtitle {
-  width: 100%;
-  padding: 10px 20px 10px;
-  margin-top: 15px;
-  background: var(--material-color);
-}
-.right-header h2 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  color: var(--orange-pure);
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
-}
-.right-header p {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--font-dark);
-  letter-spacing: 1px;
-  text-transform: normal;
-  display: block;
-  margin-top: 20px;
-}
-.right-header .right-header-banner {
-  width: 100%;
-  height: 25%;
-  padding: 25px 50px 25px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: var(--orange-opacity);
-}
-.right-header .right-header-banner span {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--font-dark);
-  letter-spacing: 1px;
-  text-transform: normal;
-  line-height: 1.6rem;
-}
-
 .work-section {
-  width: 100%;
+  width: 65%;
   padding-bottom: 50px;
   transition: 0.5s all ease;
 }
@@ -529,15 +537,12 @@ body {
     justify-content: space-around;
     align-items: center;
   }
-  .main-container .left-container {
-    width: 97.5%;
-    margin-bottom: 2%;
-  }
-  .main-container .right-container {
-    width: 97.5%;
+
+  .info-container, .work-section, .right-profile, .left-profile {
+    width: 100%;
   }
 
-  .work-section .fa-download {
+  .fa-download {
     position: fixed;
     top: 1.5%;
     right: 3.5%;

@@ -166,7 +166,7 @@ body {
 }
 
 /* ----------- PROGRESS BAR ----------- */
-#progress{
+#progress {
     width: 4px;
     height: 0px;
     max-height: 100vh;
@@ -195,21 +195,26 @@ body {
     position: relative;
     @include flex(row wrap, space-around, flex-start);
 
-    .left-container {
-        width: 35%;
+    .top-container {
+        width: 100%;
         @include flex(row wrap, flex-start, flex-start);
     }
     
-    .right-container {
-        width: 65%;
-        @include flex(column wrap, space-between, flex-start);
+    .bot-container {
+        width: 100%;
+        @include flex(row wrap, space-between, flex-start);
+        background: transparent;
     }
 }
 
-.profile-section {
-    width: 100%;
-    transition: 0.5s all ease;
+.left-profile {
+    width: 35%;
     background: var(--background-dark);
+}
+
+.right-profile {
+    width: 65%;
+    background: var(--background-light);
 }
 
 .frame {
@@ -240,10 +245,59 @@ body {
     }
 }
 
-// container of my informations
-.left-section {
-    padding: 15px 0 15px 0;
+.right-profile {
+    height: 450px;
+    position: relative;
+
+    .right-profile-top {
+        padding-top: 5%;
+        padding-left: 50px;
+    }
+    // My name
+    h1 {
+        font-family: "Code Pro Demo";
+        @include font(5rem, bold, var(--font-dark), 3px, normal);
+    }
+    .subtitle {
+        width: 100%;
+        padding: 10px 20px 10px;
+        margin-top: 15px;
+        background: var(--material-color);
+    }
+    // my job
+    h2 {
+        @include font(2.5rem, 500, var(--orange-pure), 3.5px, uppercase);
+    }
+    // my adress
+    p {
+        @include font(1.6rem, 500, var(--font-dark), 1px, normal);
+        display: block;
+        margin-top: 20px;
+    }
+    .right-profile-banner {
+        width: 100%; height: 25%;
+        padding: 25px 50px 25px;
+        position: absolute;
+        left: 0; bottom: 0; right: 0;
+        background: var(--orange-opacity);
+        // my description
+        span {
+            @include font(1.6rem, 500, var(--font-dark), 1px, normal);
+            line-height: 1.6rem;
+        }
+    }        
 }
+
+// area for all informations
+.info-container {
+    width: 35%;
+    background: var(--material-color);
+    // container of my informations
+    .left-info-section {
+        padding: 15px 0 15px 0;
+    }
+}
+
 
 // titles of left categories
 .main-title-left {
@@ -254,7 +308,7 @@ body {
     text-align: right;
 }
 
-.left-inner, .left-inner a {
+.left-info-inner, .left-info-inner a {
     @include font(1.7rem, normal, var(--font-grey), 0.5px, normal);
     text-align: right;
     word-break: break-all;
@@ -327,7 +381,7 @@ body {
     }
 }
 
-.formation-container {
+.info-formation {
     padding-bottom: 25px;
     margin-top: 20px;
     text-align: right;
@@ -351,52 +405,8 @@ body {
     }
 }
 
-.right-header {
-    width: 100%;
-    height: 450px;
-    position: relative;
-
-    .right-header-top {
-        padding-top: 5%;
-        padding-left: 50px;
-    }
-    // My name
-    h1 {
-        font-family: "Code Pro Demo";
-        @include font(5rem, bold, var(--font-dark), 3px, normal);
-    }
-    .subtitle {
-        width: 100%;
-        padding: 10px 20px 10px;
-        margin-top: 15px;
-        background: var(--material-color);
-    }
-    // my job
-    h2 {
-        @include font(2.5rem, 500, var(--orange-pure), 3.5px, uppercase);
-    }
-    // my adress
-    p {
-        @include font(1.6rem, 500, var(--font-dark), 1px, normal);
-        display: block;
-        margin-top: 20px;
-    }
-    .right-header-banner {
-        width: 100%; height: 25%;
-        padding: 25px 50px 25px;
-        position: absolute;
-        left: 0; bottom: 0; right: 0;
-        background: var(--orange-opacity);
-        // my description
-        span {
-            @include font(1.6rem, 500, var(--font-dark), 1px, normal);
-            line-height: 1.6rem;
-        }
-    }        
-}
-
 .work-section {
-    width: 100%;
+    width: 65%;
     padding-bottom: 50px;
     transition: 0.5s all ease;
 }
@@ -465,23 +475,17 @@ body {
 
 // mobile display
 @media all and (max-width: 650px) {
-
     .main-container {
         margin: auto;
         @include flex(column wrap, space-around, center);
+    }
     
-        .left-container {
-            width: 97.5%;
-            margin-bottom: 2%;
-        }
-        
-        .right-container {
-            width: 97.5%;
-        }
+    .info-container, .work-section, .right-profile, .left-profile {
+        width: 100%;
     }
 
     // fixed button download in mobile media
-    .work-section .fa-download {
+    .fa-download {
         position: fixed;
         top: 1.5%;
         right: 3.5%;
