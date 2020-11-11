@@ -97,6 +97,45 @@
     align-items: $align;
 }
 
+// media queries mixins
+$breakpoints: (
+    small-mobile: 450px,
+    mobile: 650px,
+    tablet: 767px,
+    small-screen: 1100px,
+    medium-screen: 1275px
+);
+
+@mixin mobile-small {
+    @media screen and (max-width: map-get($breakpoints, small-mobile)) {
+        @content;
+    }
+}
+
+@mixin mobile-screen {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+@mixin tablet-screen {
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin small-screen {
+    @media screen and (max-width: map-get($breakpoints, small-screen)) {
+        @content;
+    }
+}
+
+@mixin medium-screen {
+    @media screen and (max-width: map-get($breakpoints, medium-screen)) {
+        @content;
+    }
+}
+
 /* =============== ANIMATIONS =============== */
 
 /* width */
@@ -148,7 +187,6 @@ html {
 }
 
 body {
-    font-size: 1.4rem;
     background: var(--material-lighter);
     color: var(--font-grey);
     font-weight: normal;
@@ -195,109 +233,223 @@ body {
     position: relative;
     @include flex(row wrap, space-around, flex-start);
 
+    @include mobile-screen {
+        @include flex(column wrap, flex-start, center);
+    }
+
     .top-container {
-        width: 100%;
-        @include flex(row wrap, flex-start, flex-start);
+        width: 100%; height: 25%;
+        position: relative;
+        @include flex(row nowrap, flex-start, flex-start);
+
+        @include mobile-screen {
+            @include flex(column wrap, flex-start, center);
+        }
+        
+        // left section of header
+        .left-profile {
+            width: 35%;
+            height: 100%;
+            background: var(--background-dark);
+            position: relative;
+
+            @include mobile-screen {
+                width: 100%;
+            }
+        }
+        // right section of header
+        .right-profile {
+            width: 65%;
+            height: 100%;
+            background: var(--background-light);
+            position: relative;
+
+            @include mobile-screen {
+                width: 100%;
+            }
+        }
     }
     
     .bot-container {
         width: 100%;
-        @include flex(row wrap, space-between, flex-start);
-        background: transparent;
+        @include flex(row nowrap, space-between, flex-start);
+
+        @include mobile-screen {
+            @include flex(column wrap, flex-start, center);
+        }
+
+        // area for all informations
+        .info-container {
+            width: 35%;
+
+            @include mobile-screen {
+                width: 100%;
+            }
+
+            // container of my informations
+            .left-info-section {
+                padding: 15px 0 15px 0;
+                background: var(--material-color);
+            }
+        }
+
+        // area for all works
+        .work-section {
+            width: 65%;
+            padding-bottom: 50px;
+            transition: 0.5s all ease;
+
+            @include mobile-screen {
+                width: 100%;
+            }
+        }
     }
 }
 
-.left-profile {
-    width: 35%;
-    background: var(--background-dark);
-}
-
-.right-profile {
-    width: 65%;
-    background: var(--background-light);
-}
-
-.frame {
+.header-left {
     width: 100%;
-    height: 450px;
+    height: 100%;
     position: relative;
     background: var(--material-lighter);
+    // for a responsive square
+    &::after {
+        content: "";
+        display: block;
+        padding-bottom: 95%;
+    }
     // profile picture
     &__picture {
+        width: 100%; height: 100%;
         position: absolute;
-        top: 0; bottom : 0;
+        top: 0; bottom: 0; left: 0; right: 0;
         overflow: hidden;
     }
     // banner in profile
     &__banner {
-        width: 100%;
-        height: 25%;
+        width: 100%; height: 25%;
         padding: calc((25% - 3rem) / 2) 0 calc((25% - 3rem) / 2);
         text-align: center;
         position: absolute;
         left: 0; bottom: 0; right: 0;
         background: var(--orange-opacity);
 
-        .frame__title {
-            @include font(3rem, 600, var(--font-light), 2px, uppercase);
-            line-height: 3rem;
+        @include mobile-screen {
+            height: auto;
+            padding: 30px 0 30px;
+        }
+
+        .header-left__title {
+            @include font(2.5rem, 600, var(--font-light), 2px, uppercase);
+            line-height: 2.5rem;
+
+            @include mobile-screen {
+                @include font(3rem, 600, var(--font-light), 2px, uppercase);
+                line-height: 3rem;
+            }
+
+            @include mobile-small {
+                @include font(2.2rem, 600, var(--font-light), 2px, uppercase);
+                line-height: 2.2rem;
+            }
         }
     }
 }
 
-.right-profile {
-    height: 450px;
+.header-right {
+    width: 100%;
+    height: 100%;
     position: relative;
+    // for a responsive rectangle
+    &::after {
+        content: "";
+        display: block;
+        padding-bottom: 51.1%;
+
+        @include mobile-screen {
+            padding-bottom: 0;
+        }
+    }
 
     .right-profile-top {
+        position: absolute;
+        left: 0; bottom: 0; right: 0; top: 0;
         padding-top: 5%;
         padding-left: 50px;
+
+        @include mobile-screen {
+            padding: 35px 30px 20px;
+            position: initial;
+        }
+        @include mobile-small {
+            padding: 30px 20px 20px;
+        }
+        // My name
+        h1 {
+            font-family: "Code Pro Demo";
+            @include font(calc(3rem + 2vh), bold, var(--font-dark), 3px, normal);
+
+            @include mobile-screen {
+                @include font(3.8rem, bold, var(--font-dark), 3px, normal);
+            }
+            @include mobile-small {
+                @include font(3.2rem, bold, var(--font-dark), 2.75px, normal);
+            }
+        }
+        // my job
+        .subtitle {
+            width: 100%;
+            padding: 10px 20px 10px;
+            margin-top: 10px;
+            background: var(--material-color);
+
+            h2 {
+                @include font(2.5rem, 500, var(--orange-pure), 3.5px, uppercase);
+
+                @include mobile-screen {
+                    @include font(1.6rem, 500, var(--orange-pure), 3.25px, uppercase);
+                }
+                @include mobile-small {
+                    @include font(1.4rem, 500, var(--orange-pure), 2.5px, uppercase);
+                }
+            }
+        }
+        // my adress
+        p {
+            @include font(1.6rem, 500, var(--font-dark), 1px, normal);
+            display: block;
+            margin-top: 20px;
+
+            @include mobile-small {
+                @include font(1.4rem, 500, var(--font-dark), 0.5px, normal);
+            }
+        }
     }
-    // My name
-    h1 {
-        font-family: "Code Pro Demo";
-        @include font(5rem, bold, var(--font-dark), 3px, normal);
-    }
-    .subtitle {
-        width: 100%;
-        padding: 10px 20px 10px;
-        margin-top: 15px;
-        background: var(--material-color);
-    }
-    // my job
-    h2 {
-        @include font(2.5rem, 500, var(--orange-pure), 3.5px, uppercase);
-    }
-    // my adress
-    p {
-        @include font(1.6rem, 500, var(--font-dark), 1px, normal);
-        display: block;
-        margin-top: 20px;
-    }
+
     .right-profile-banner {
         width: 100%; height: 25%;
-        padding: 25px 50px 25px;
+        padding-left: 50px;
+        padding-right: 50px;
         position: absolute;
         left: 0; bottom: 0; right: 0;
         background: var(--orange-opacity);
+        display: flex;
+
+        @include mobile-screen {
+            position: initial;
+            height: auto;
+            padding: 25px 30px 25px;
+        }
+        @include mobile-small {
+            padding: 25px 20px 25px;
+        }
         // my description
         span {
-            @include font(1.6rem, 500, var(--font-dark), 1px, normal);
-            line-height: 1.6rem;
+            @include font(1.6rem, 500, var(--font-dark), 0.5px, normal);
+            display: block;
+            margin: auto;
         }
-    }        
-}
-
-// area for all informations
-.info-container {
-    width: 35%;
-    background: var(--material-color);
-    // container of my informations
-    .left-info-section {
-        padding: 15px 0 15px 0;
     }
 }
-
 
 // titles of left categories
 .main-title-left {
@@ -306,6 +458,13 @@ body {
     margin: 0 50px 15px 0;
     border-bottom: 4px solid var(--orange-opacity);
     text-align: right;
+
+    @include mobile-screen {
+        margin: 0 30px 15px 0;
+    }
+    @include mobile-small {
+        margin: 0 20px 15px 0;
+    }
 }
 
 .left-info-inner, .left-info-inner a {
@@ -313,6 +472,13 @@ body {
     text-align: right;
     word-break: break-all;
     padding: 0px 50px 0px 50px;
+
+    @include mobile-screen {
+        padding: 0px 30px 0px;
+    }
+    @include mobile-small {
+        padding: 0px 20px 0px;
+    }
     // bold names
     em {
         font-weight: 500;
@@ -383,7 +549,6 @@ body {
 
 .info-formation {
     padding-bottom: 25px;
-    margin-top: 20px;
     text-align: right;
     word-break: break-all;
     background: var(--material-lighter);
@@ -393,11 +558,25 @@ body {
         padding: 20px 50px 20px 0;
         margin-bottom: 25px;
         background: var(--orange-pure);
+
+        @include mobile-screen {
+            padding: 20px 30px 20px;
+        }
+        @include mobile-small {
+            padding: 20px;
+        }
     }
 
     .formation__field {
         @include font(1.7rem, normal, var(--font-grey), 0.5px, normal);
         padding: 25px 50px 25px 5%;
+
+        @include mobile-screen {
+            padding: 25px 30px 25px;
+        }
+        @include mobile-small {
+            padding: 20px;
+        }
         em {
             font-weight: 500;
             font-style: normal;
@@ -405,28 +584,35 @@ body {
     }
 }
 
-.work-section {
-    width: 65%;
-    padding-bottom: 50px;
-    transition: 0.5s all ease;
-}
-
 .fa-download {
     float: right;
-    margin: 50px;
+    margin: 50px 50px 0 0;
     font-size: 2rem;
     color: var(--orange-pure);
     transition: 0.5s ease;
     position: relative;
     z-index: 50;
+
+    @include mobile-screen {
+        margin: 0;
+        position: fixed;
+        top: 4%; right: 7.5%;
+    }
 }
 
 .main-title-right {
     @include font(2.2rem, bold, var(--orange-pure), 4px, uppercase);
     padding: 12px 0;
-    margin: 15px 0 40px 50px;
+    margin: 15px 30px 40px 50px;
     border-bottom: 4px solid var(--orange-opacity);
     text-align: left;
+
+    @include mobile-screen {
+        margin: 20px 30px 40px;
+    }
+    @include mobile-small {
+        margin: 20px 20px 30px;
+    }
 }
 
 .work {
@@ -434,13 +620,27 @@ body {
     position: relative;
     padding: 0 50px 0;
 
+    @include mobile-screen {
+        @include flex(column wrap, stretch, flex-start);
+        padding: 0 30px 0;
+    }
+    @include mobile-small {
+        padding: 0 20px 0;
+    }
+
     &-date {
         padding: 30px 5px 20px 5px;
         width: 30%;
         border-bottom: 3px solid var(--font-dark);
-        word-break: break-all;
+        word-break: keep-all;
         h2 {
             @include font(1.5rem, bold, var(--font-dark), 1px, none);
+        }
+
+        @include mobile-screen {
+            width: 100%;
+            border-bottom: 0px solid var(--font-dark);
+            padding: 35px 0px 15px 0px;
         }
     }
 
@@ -449,16 +649,28 @@ body {
         padding: 25px 0 30px 35px;
         border-left: 3px solid var(--font-dark);
         border-bottom: 3px solid var(--font-dark);
+
+        @include mobile-screen {
+            padding: 0px 0px 35px;
+            border-left: 0;
+        }
         // title of experience
         h1, a {
             font-family: "Code Pro Demo", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             @include font(2.2rem, bold, var(--font-dark), 1px, uppercase);
-            
+
+            @include mobile-screen {
+                @include font(2.0rem, bold, var(--font-dark), 1px, uppercase);
+            }
         }
         // company name
         h2 {
             @include font(2rem, bold, var(--font-dark), 1px, normal);
             margin-bottom: 5px;
+
+            @include mobile-screen {
+                @include font(1.8rem, bold, var(--font-dark), 1px, normal);
+            }
         }
         // description of experience
         p {
@@ -471,23 +683,17 @@ body {
             margin-left: 10px;
         }
     }
-}
 
-// mobile display
-@media all and (max-width: 650px) {
-    .main-container {
-        margin: auto;
-        @include flex(column wrap, space-around, center);
-    }
-    
-    .info-container, .work-section, .right-profile, .left-profile {
-        width: 100%;
+    .no-padding-top {
+        @include mobile-screen {
+            padding-top: 0px;
+        }
     }
 
-    // fixed button download in mobile media
-    .fa-download {
-        position: fixed;
-        top: 1.5%;
-        right: 3.5%;
+    .no-border {
+        @include mobile-screen {
+            border-bottom: none;
+            padding-bottom: 10px;
+        }
     }
 }
