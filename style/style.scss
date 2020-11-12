@@ -100,8 +100,7 @@
 // media queries mixins
 $breakpoints: (
     small-mobile: 450px,
-    mobile: 650px,
-    tablet: 767px,
+    mobile: 768px,
     small-screen: 1024px,
     medium-screen: 1280px
 );
@@ -114,12 +113,6 @@ $breakpoints: (
 
 @mixin mobile-screen {
     @media screen and (max-width: map-get($breakpoints, mobile)) {
-        @content;
-    }
-}
-
-@mixin tablet-screen {
-    @media screen and (max-width: map-get($breakpoints, tablet)) {
         @content;
     }
 }
@@ -237,10 +230,6 @@ body {
     position: relative;
     @include flex(row wrap, space-around, flex-start);
 
-    // @include mobile-screen {
-    //     @include flex(column wrap, flex-start, center);
-    // }
-
     .top-container {
         width: 100%; height: 25%;
         position: relative;
@@ -257,6 +246,9 @@ body {
             background: var(--background-dark);
             position: relative;
 
+            @include small-screen {
+                width: 40%;
+            }
             @include mobile-screen {
                 width: 100%;
             }
@@ -268,6 +260,9 @@ body {
             background: var(--background-light);
             position: relative;
 
+            @include small-screen {
+                width: 60%;
+            }
             @include mobile-screen {
                 width: 100%;
             }
@@ -286,6 +281,9 @@ body {
         .info-container {
             width: 35%;
 
+            @include small-screen {
+                width: 40%;
+            }
             @include mobile-screen {
                 width: 100%;
             }
@@ -303,6 +301,9 @@ body {
             padding-bottom: 50px;
             transition: 0.5s all ease;
 
+            @include small-screen {
+                width: 60%;
+            }
             @include mobile-screen {
                 width: 100%;
             }
@@ -336,9 +337,12 @@ body {
         position: absolute;
         left: 0; bottom: 0; right: 0;
         background: var(--orange-opacity);
-
         @include medium-screen {
             padding: 30px 0 30px;
+        }
+        @include small-screen {
+            height: 27.5%;
+            padding: calc((27.5% - 2rem) / 2) 0 calc((27.5% - 2rem) / 2);
         }
         @include mobile-screen {
             height: auto;
@@ -352,6 +356,10 @@ body {
             @include medium-screen {
                 @include font(2.4rem, 600, var(--font-light), 2px, uppercase);
                 line-height: 2.4rem;
+            }
+            @include small-screen {
+                @include font(2rem, 600, var(--font-light), 2px, uppercase);
+                line-height: 2rem;
             }
             @include mobile-screen {
                 @include font(3rem, 600, var(--font-light), 2px, uppercase);
@@ -373,8 +381,11 @@ body {
     &::after {
         content: "";
         display: block;
-        padding-bottom: 51.1%;
+        padding-bottom: 51.15%;
 
+        @include small-screen {
+            padding-bottom: 63.35%;
+        }
         @include mobile-screen {
             padding-bottom: 0;
         }
@@ -404,6 +415,9 @@ body {
             @include medium-screen {
                 @include font(3.5rem, bold, var(--font-dark), 3px, normal);
             }
+            @include small-screen {
+                @include font(3.2rem, bold, var(--font-dark), 3px, normal);
+            }
             @include mobile-screen {
                 @include font(3.8rem, bold, var(--font-dark), 3px, normal);
             }
@@ -424,6 +438,9 @@ body {
                 @include medium-screen {
                     @include font(1.8rem, 500, var(--orange-pure), 3.5px, uppercase);
                 }
+                @include small-screen {
+                    @include font(1.5rem, 500, var(--orange-pure), 3.5px, uppercase);
+                }
                 @include mobile-screen {
                     @include font(1.6rem, 500, var(--orange-pure), 3.25px, uppercase);
                 }
@@ -440,6 +457,9 @@ body {
 
             @include medium-screen {
                 @include font(1.5rem, 500, var(--font-dark), 1px, normal);
+            }
+            @include small-screen {
+                @include font(1.4rem, 500, var(--font-dark), 0.75px, normal);
             }
             @include mobile-small {
                 @include font(1.4rem, 500, var(--font-dark), 0.5px, normal);
@@ -459,6 +479,9 @@ body {
         @include medium-screen {
             padding: 0 30px;
         }
+        @include small-screen {
+            height: 27.5%;
+        }
         @include mobile-screen {
             position: initial;
             height: auto;
@@ -476,6 +499,9 @@ body {
             @include medium-screen {
                 @include font(1.5rem, 500, var(--font-dark), 0.5px, normal);
             }
+            @include small-screen {
+                @include font(1.3rem, 500, var(--font-dark), 0.5px, normal);
+            }
         }
     }
 }
@@ -492,6 +518,9 @@ body {
     @include medium-screen {
         @include font(2rem, bold, var(--orange-pure), 3px, uppercase);
         margin: 0 30px 10px 0;
+    }
+    @include small-screen {
+        margin: 0 20px 10px 0;
     }
     @include mobile-screen {
         @include font(2.1rem, bold, var(--orange-pure), 3.5px, uppercase);
@@ -512,7 +541,7 @@ body {
         @include font(1.6rem, normal, var(--font-grey), 0.5px, normal);
         padding: 0px 30px 0px;
     }
-    @include mobile-small {
+    @include small-screen {
         padding: 0px 20px 0px;
     }
     // bold names
@@ -599,6 +628,9 @@ body {
             padding: 20px 30px 20px;
             margin-bottom: 10px;
         }
+        @include small-screen {
+            padding: 20px;
+        }
         @include mobile-screen {
             padding: 20px 30px 20px;
         }
@@ -613,6 +645,9 @@ body {
 
         @include medium-screen {
             padding: 25px 30px 25px;
+        }
+        @include small-screen {
+            padding: 25px 20px 25px;
         }
         @include mobile-screen {
             padding: 25px 30px 25px;
@@ -638,6 +673,9 @@ body {
 
     @include medium-screen {
         margin: 40px;
+    }
+    @include small-screen {
+        margin: 30px;
     }
     @include mobile-screen {
         margin: 0;
@@ -675,8 +713,11 @@ body {
     @include medium-screen {
         padding: 0 30px 0;
     }
-    @include mobile-screen {
+    @include small-screen {
         @include flex(column wrap, stretch, flex-start);
+        padding: 0 30px 0;
+    }
+    @include mobile-screen {
         padding: 0 30px 0;
     }
     @include mobile-small {
@@ -693,20 +734,45 @@ body {
             @include font(1.5rem, bold, var(--font-dark), 1px, none);
         }
 
-        @include mobile-screen {
+        @include small-screen {
             width: 100%;
             border-bottom: 0px solid var(--font-dark);
             padding: 25px 0px 10px 0px;
         }
     }
 
+    // for descriptions of works
+    .first-description {
+        padding-top: 5px;
+    }
+
+    .first-date {
+        padding-top: 10px;
+
+        @include small-screen {
+            padding-top: 0px;
+        }
+    }
+
+    .no-border {
+        @include small-screen {
+            border-bottom: none;
+            padding-bottom: 0px;
+        }
+    }
+
     &-description {
         width: 100%;
-        padding: 25px 0 30px 35px;
+        padding: 30px 0 30px 35px;
         border-left: 3px solid var(--font-dark);
         border-bottom: 3px solid var(--font-dark);
         border-bottom-right-radius: 2px;
 
+        @include small-screen {
+            padding: 0px 0px 25px;
+            border-left: 0;
+            border-bottom-left-radius: 2px;
+        }
         @include mobile-screen {
             padding: 0px 0px 25px;
             border-left: 0;
@@ -720,6 +786,10 @@ body {
             @include medium-screen {
                 @include font(2.0rem, bold, var(--font-dark), 1px, uppercase);
             }
+        }
+        a:hover {
+            transition: .4s ease;
+            color: var(--orange-pure);
         }
         // company name
         h2 {
@@ -739,19 +809,10 @@ body {
         img {
             width: 25px;
             margin-left: 10px;
-        }
-    }
 
-    .no-padding-top {
-        @include mobile-screen {
-            padding-top: 0px;
-        }
-    }
-
-    .no-border {
-        @include mobile-screen {
-            border-bottom: none;
-            padding-bottom: 0px;
+            @include small-screen {
+                width: 20px;
+            }
         }
     }
 }
