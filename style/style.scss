@@ -102,8 +102,8 @@ $breakpoints: (
     small-mobile: 450px,
     mobile: 650px,
     tablet: 767px,
-    small-screen: 1100px,
-    medium-screen: 1275px
+    small-screen: 1024px,
+    medium-screen: 1280px
 );
 
 @mixin mobile-small {
@@ -333,6 +333,9 @@ body {
         left: 0; bottom: 0; right: 0;
         background: var(--orange-opacity);
 
+        @include medium-screen {
+            padding: 30px 0 30px;
+        }
         @include mobile-screen {
             height: auto;
             padding: 30px 0 30px;
@@ -342,11 +345,14 @@ body {
             @include font(2.5rem, 600, var(--font-light), 2px, uppercase);
             line-height: 2.5rem;
 
+            @include medium-screen {
+                @include font(2.4rem, 600, var(--font-light), 2px, uppercase);
+                line-height: 2.4rem;
+            }
             @include mobile-screen {
                 @include font(3rem, 600, var(--font-light), 2px, uppercase);
                 line-height: 3rem;
             }
-
             @include mobile-small {
                 @include font(2.2rem, 600, var(--font-light), 2px, uppercase);
                 line-height: 2.2rem;
@@ -376,18 +382,24 @@ body {
         padding-top: 5%;
         padding-left: 50px;
 
+        @include medium-screen {
+            padding-left: 30px;
+        }
         @include mobile-screen {
-            padding: 35px 30px 20px;
+            padding: 25px 30px 20px;
             position: initial;
         }
         @include mobile-small {
-            padding: 30px 20px 20px;
+            padding: 25px 20px 20px;
         }
         // My name
         h1 {
             font-family: "Code Pro Demo";
             @include font(calc(3rem + 2vh), bold, var(--font-dark), 3px, normal);
 
+            @include medium-screen {
+                @include font(3.5rem, bold, var(--font-dark), 3px, normal);
+            }
             @include mobile-screen {
                 @include font(3.8rem, bold, var(--font-dark), 3px, normal);
             }
@@ -405,6 +417,9 @@ body {
             h2 {
                 @include font(2.5rem, 500, var(--orange-pure), 3.5px, uppercase);
 
+                @include medium-screen {
+                    @include font(1.8rem, 500, var(--orange-pure), 3.5px, uppercase);
+                }
                 @include mobile-screen {
                     @include font(1.6rem, 500, var(--orange-pure), 3.25px, uppercase);
                 }
@@ -419,6 +434,9 @@ body {
             display: block;
             margin-top: 20px;
 
+            @include medium-screen {
+                @include font(1.5rem, 500, var(--font-dark), 1px, normal);
+            }
             @include mobile-small {
                 @include font(1.4rem, 500, var(--font-dark), 0.5px, normal);
             }
@@ -434,6 +452,9 @@ body {
         background: var(--orange-opacity);
         display: flex;
 
+        @include medium-screen {
+            padding: 0 30px;
+        }
         @include mobile-screen {
             position: initial;
             height: auto;
@@ -447,6 +468,10 @@ body {
             @include font(1.6rem, 500, var(--font-dark), 0.5px, normal);
             display: block;
             margin: auto;
+
+            @include medium-screen {
+                @include font(1.5rem, 500, var(--font-dark), 0.5px, normal);
+            }
         }
     }
 }
@@ -457,9 +482,15 @@ body {
     padding: 12px 0;
     margin: 0 50px 15px 0;
     border-bottom: 4px solid var(--orange-opacity);
+    border-bottom-right-radius: 4px;
     text-align: right;
 
+    @include medium-screen {
+        @include font(2rem, bold, var(--orange-pure), 3px, uppercase);
+        margin: 0 30px 10px 0;
+    }
     @include mobile-screen {
+        @include font(2.1rem, bold, var(--orange-pure), 3.5px, uppercase);
         margin: 0 30px 15px 0;
     }
     @include mobile-small {
@@ -473,7 +504,8 @@ body {
     word-break: break-all;
     padding: 0px 50px 0px 50px;
 
-    @include mobile-screen {
+    @include medium-screen {
+        @include font(1.6rem, normal, var(--font-grey), 0.5px, normal);
         padding: 0px 30px 0px;
     }
     @include mobile-small {
@@ -485,21 +517,21 @@ body {
         font-style: normal;
     }
     a {
-        padding: 15px 0 15px 0;
+        padding: 15px 0 15px;
     }
     // CONTACT
     .contact__field {
         width: 100%;
-        padding: 20px 0 20px 0;
-        @include flex(row nowrap, flex-end, center);
+        padding: 20px 0 20px;
+        @include flex(row nowrap, flex-end, flex-start);
 
         img {
-            width: 40px; height: 40px;
+            width: 40px;
             margin-left: 20px;
-        }
-        &:hover {
-            color: var(--font-light);
-            transition: 0.4s ease;
+
+            @include medium-screen {
+                margin-left: 15px;
+            }
         }
     }
     // SKILLS
@@ -559,6 +591,10 @@ body {
         margin-bottom: 25px;
         background: var(--orange-pure);
 
+        @include medium-screen {
+            padding: 20px 30px 20px;
+            margin-bottom: 10px;
+        }
         @include mobile-screen {
             padding: 20px 30px 20px;
         }
@@ -571,6 +607,9 @@ body {
         @include font(1.7rem, normal, var(--font-grey), 0.5px, normal);
         padding: 25px 50px 25px 5%;
 
+        @include medium-screen {
+            padding: 25px 30px 25px;
+        }
         @include mobile-screen {
             padding: 25px 30px 25px;
         }
@@ -593,6 +632,9 @@ body {
     position: relative;
     z-index: 50;
 
+    @include medium-screen {
+        margin: 40px;
+    }
     @include mobile-screen {
         margin: 0;
         position: fixed;
@@ -603,15 +645,21 @@ body {
 .main-title-right {
     @include font(2.2rem, bold, var(--orange-pure), 4px, uppercase);
     padding: 12px 0;
-    margin: 15px 30px 40px 50px;
+    margin: 15px 0 40px 50px;
     border-bottom: 4px solid var(--orange-opacity);
+    border-bottom-left-radius: 4px;
     text-align: left;
 
+    @include medium-screen {
+        @include font(2rem, bold, var(--orange-pure), 3px, uppercase);
+        margin: 15px 0 30px 30px;
+    }
     @include mobile-screen {
-        margin: 20px 30px 40px;
+        margin: 20px 30px 25px;
+        border-bottom-right-radius: 4px;
     }
     @include mobile-small {
-        margin: 20px 20px 30px;
+        margin: 20px;
     }
 }
 
@@ -620,6 +668,9 @@ body {
     position: relative;
     padding: 0 50px 0;
 
+    @include medium-screen {
+        padding: 0 30px 0;
+    }
     @include mobile-screen {
         @include flex(column wrap, stretch, flex-start);
         padding: 0 30px 0;
@@ -632,6 +683,7 @@ body {
         padding: 30px 5px 20px 5px;
         width: 30%;
         border-bottom: 3px solid var(--font-dark);
+        border-bottom-left-radius: 2px;
         word-break: keep-all;
         h2 {
             @include font(1.5rem, bold, var(--font-dark), 1px, none);
@@ -640,7 +692,7 @@ body {
         @include mobile-screen {
             width: 100%;
             border-bottom: 0px solid var(--font-dark);
-            padding: 35px 0px 15px 0px;
+            padding: 25px 0px 10px 0px;
         }
     }
 
@@ -649,17 +701,19 @@ body {
         padding: 25px 0 30px 35px;
         border-left: 3px solid var(--font-dark);
         border-bottom: 3px solid var(--font-dark);
+        border-bottom-right-radius: 2px;
 
         @include mobile-screen {
-            padding: 0px 0px 35px;
+            padding: 0px 0px 25px;
             border-left: 0;
+            border-bottom-left-radius: 2px;
         }
         // title of experience
         h1, a {
             font-family: "Code Pro Demo", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             @include font(2.2rem, bold, var(--font-dark), 1px, uppercase);
 
-            @include mobile-screen {
+            @include medium-screen {
                 @include font(2.0rem, bold, var(--font-dark), 1px, uppercase);
             }
         }
@@ -668,7 +722,7 @@ body {
             @include font(2rem, bold, var(--font-dark), 1px, normal);
             margin-bottom: 5px;
 
-            @include mobile-screen {
+            @include medium-screen {
                 @include font(1.8rem, bold, var(--font-dark), 1px, normal);
             }
         }
@@ -693,7 +747,7 @@ body {
     .no-border {
         @include mobile-screen {
             border-bottom: none;
-            padding-bottom: 10px;
+            padding-bottom: 0px;
         }
     }
 }

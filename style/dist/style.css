@@ -321,6 +321,11 @@ body {
   right: 0;
   background: var(--orange-opacity);
 }
+@media screen and (max-width: 1280px) {
+  .header-left__banner {
+    padding: 30px 0 30px;
+  }
+}
 @media screen and (max-width: 650px) {
   .header-left__banner {
     height: auto;
@@ -334,6 +339,16 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   line-height: 2.5rem;
+}
+@media screen and (max-width: 1280px) {
+  .header-left__banner .header-left__title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--font-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 2.4rem;
+  }
 }
 @media screen and (max-width: 650px) {
   .header-left__banner .header-left__title {
@@ -380,15 +395,20 @@ body {
   padding-top: 5%;
   padding-left: 50px;
 }
+@media screen and (max-width: 1280px) {
+  .header-right .right-profile-top {
+    padding-left: 30px;
+  }
+}
 @media screen and (max-width: 650px) {
   .header-right .right-profile-top {
-    padding: 35px 30px 20px;
+    padding: 25px 30px 20px;
     position: initial;
   }
 }
 @media screen and (max-width: 450px) {
   .header-right .right-profile-top {
-    padding: 30px 20px 20px;
+    padding: 25px 20px 20px;
   }
 }
 .header-right .right-profile-top h1 {
@@ -398,6 +418,15 @@ body {
   color: var(--font-dark);
   letter-spacing: 3px;
   text-transform: normal;
+}
+@media screen and (max-width: 1280px) {
+  .header-right .right-profile-top h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--font-dark);
+    letter-spacing: 3px;
+    text-transform: normal;
+  }
 }
 @media screen and (max-width: 650px) {
   .header-right .right-profile-top h1 {
@@ -430,6 +459,15 @@ body {
   letter-spacing: 3.5px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 1280px) {
+  .header-right .right-profile-top .subtitle h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--orange-pure);
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+  }
+}
 @media screen and (max-width: 650px) {
   .header-right .right-profile-top .subtitle h2 {
     font-size: 1.6rem;
@@ -457,6 +495,15 @@ body {
   display: block;
   margin-top: 20px;
 }
+@media screen and (max-width: 1280px) {
+  .header-right .right-profile-top p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--font-dark);
+    letter-spacing: 1px;
+    text-transform: normal;
+  }
+}
 @media screen and (max-width: 450px) {
   .header-right .right-profile-top p {
     font-size: 1.4rem;
@@ -477,6 +524,11 @@ body {
   right: 0;
   background: var(--orange-opacity);
   display: flex;
+}
+@media screen and (max-width: 1280px) {
+  .header-right .right-profile-banner {
+    padding: 0 30px;
+  }
 }
 @media screen and (max-width: 650px) {
   .header-right .right-profile-banner {
@@ -499,6 +551,15 @@ body {
   display: block;
   margin: auto;
 }
+@media screen and (max-width: 1280px) {
+  .header-right .right-profile-banner span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--font-dark);
+    letter-spacing: 0.5px;
+    text-transform: normal;
+  }
+}
 
 .main-title-left {
   font-size: 2.2rem;
@@ -509,10 +570,26 @@ body {
   padding: 12px 0;
   margin: 0 50px 15px 0;
   border-bottom: 4px solid var(--orange-opacity);
+  border-bottom-right-radius: 4px;
   text-align: right;
+}
+@media screen and (max-width: 1280px) {
+  .main-title-left {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--orange-pure);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 30px 10px 0;
+  }
 }
 @media screen and (max-width: 650px) {
   .main-title-left {
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: var(--orange-pure);
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
     margin: 0 30px 15px 0;
   }
 }
@@ -532,8 +609,13 @@ body {
   word-break: break-all;
   padding: 0px 50px 0px 50px;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1280px) {
   .left-info-inner, .left-info-inner a {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: var(--font-grey);
+    letter-spacing: 0.5px;
+    text-transform: normal;
     padding: 0px 30px 0px;
   }
 }
@@ -547,24 +629,24 @@ body {
   font-style: normal;
 }
 .left-info-inner a, .left-info-inner a a {
-  padding: 15px 0 15px 0;
+  padding: 15px 0 15px;
 }
 .left-info-inner .contact__field, .left-info-inner a .contact__field {
   width: 100%;
-  padding: 20px 0 20px 0;
+  padding: 20px 0 20px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
 }
 .left-info-inner .contact__field img, .left-info-inner a .contact__field img {
   width: 40px;
-  height: 40px;
   margin-left: 20px;
 }
-.left-info-inner .contact__field:hover, .left-info-inner a .contact__field:hover {
-  color: var(--font-light);
-  transition: 0.4s ease;
+@media screen and (max-width: 1280px) {
+  .left-info-inner .contact__field img, .left-info-inner a .contact__field img {
+    margin-left: 15px;
+  }
 }
 .left-info-inner .skill, .left-info-inner a .skill {
   display: flex;
@@ -623,6 +705,12 @@ body {
   margin-bottom: 25px;
   background: var(--orange-pure);
 }
+@media screen and (max-width: 1280px) {
+  .info-formation .formation-title {
+    padding: 20px 30px 20px;
+    margin-bottom: 10px;
+  }
+}
 @media screen and (max-width: 650px) {
   .info-formation .formation-title {
     padding: 20px 30px 20px;
@@ -640,6 +728,11 @@ body {
   letter-spacing: 0.5px;
   text-transform: normal;
   padding: 25px 50px 25px 5%;
+}
+@media screen and (max-width: 1280px) {
+  .info-formation .formation__field {
+    padding: 25px 30px 25px;
+  }
 }
 @media screen and (max-width: 650px) {
   .info-formation .formation__field {
@@ -665,6 +758,11 @@ body {
   position: relative;
   z-index: 50;
 }
+@media screen and (max-width: 1280px) {
+  .fa-download {
+    margin: 40px;
+  }
+}
 @media screen and (max-width: 650px) {
   .fa-download {
     margin: 0;
@@ -681,18 +779,30 @@ body {
   letter-spacing: 4px;
   text-transform: uppercase;
   padding: 12px 0;
-  margin: 15px 30px 40px 50px;
+  margin: 15px 0 40px 50px;
   border-bottom: 4px solid var(--orange-opacity);
+  border-bottom-left-radius: 4px;
   text-align: left;
+}
+@media screen and (max-width: 1280px) {
+  .main-title-right {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--orange-pure);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 15px 0 30px 30px;
+  }
 }
 @media screen and (max-width: 650px) {
   .main-title-right {
-    margin: 20px 30px 40px;
+    margin: 20px 30px 25px;
+    border-bottom-right-radius: 4px;
   }
 }
 @media screen and (max-width: 450px) {
   .main-title-right {
-    margin: 20px 20px 30px;
+    margin: 20px;
   }
 }
 
@@ -703,6 +813,11 @@ body {
   align-items: flex-start;
   position: relative;
   padding: 0 50px 0;
+}
+@media screen and (max-width: 1280px) {
+  .work {
+    padding: 0 30px 0;
+  }
 }
 @media screen and (max-width: 650px) {
   .work {
@@ -722,6 +837,7 @@ body {
   padding: 30px 5px 20px 5px;
   width: 30%;
   border-bottom: 3px solid var(--font-dark);
+  border-bottom-left-radius: 2px;
   word-break: keep-all;
 }
 .work-date h2 {
@@ -735,7 +851,7 @@ body {
   .work-date {
     width: 100%;
     border-bottom: 0px solid var(--font-dark);
-    padding: 35px 0px 15px 0px;
+    padding: 25px 0px 10px 0px;
   }
 }
 .work-description {
@@ -743,11 +859,13 @@ body {
   padding: 25px 0 30px 35px;
   border-left: 3px solid var(--font-dark);
   border-bottom: 3px solid var(--font-dark);
+  border-bottom-right-radius: 2px;
 }
 @media screen and (max-width: 650px) {
   .work-description {
-    padding: 0px 0px 35px;
+    padding: 0px 0px 25px;
     border-left: 0;
+    border-bottom-left-radius: 2px;
   }
 }
 .work-description h1, .work-description a {
@@ -758,7 +876,7 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1280px) {
   .work-description h1, .work-description a {
     font-size: 2rem;
     font-weight: bold;
@@ -775,7 +893,7 @@ body {
   text-transform: normal;
   margin-bottom: 5px;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1280px) {
   .work-description h2 {
     font-size: 1.8rem;
     font-weight: bold;
@@ -804,6 +922,6 @@ body {
 @media screen and (max-width: 650px) {
   .work .no-border {
     border-bottom: none;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
   }
 }
