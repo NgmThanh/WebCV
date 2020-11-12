@@ -725,7 +725,7 @@ body {
     }
 
     &-date {
-        padding: 30px 5px 20px 5px;
+        padding: 35px 5px 20px 5px;
         width: 30%;
         border-bottom: 3px solid var(--font-dark);
         border-bottom-left-radius: 2px;
@@ -800,6 +800,14 @@ body {
                 @include font(1.8rem, bold, var(--font-dark), 1px, normal);
             }
         }
+        .work-language {
+            @include font(1.4rem, normal, var(--font-light), 1px, uppercase);
+            background: var(--material-color);
+            display: inline-block;
+            border-radius: 4px;
+            padding: 5px 7px;
+            margin: 2px 2px 2px 0px;
+        }
         // description of experience
         p {
             @include font(1.6rem, normal, var(--font-dark), 1px, none);
@@ -807,12 +815,8 @@ body {
         }
         // icon redirection
         img {
-            width: 25px;
+            width: 20px;
             margin-left: 10px;
-
-            @include small-screen {
-                width: 20px;
-            }
         }
     }
 }

@@ -938,7 +938,7 @@ body {
   }
 }
 .work-date {
-  padding: 30px 5px 20px 5px;
+  padding: 35px 5px 20px 5px;
   width: 30%;
   border-bottom: 3px solid var(--font-dark);
   border-bottom-left-radius: 2px;
@@ -1034,6 +1034,18 @@ body {
     text-transform: normal;
   }
 }
+.work-description .work-language {
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: var(--font-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--material-color);
+  display: inline-block;
+  border-radius: 4px;
+  padding: 5px 7px;
+  margin: 2px 2px 2px 0px;
+}
 .work-description p {
   font-size: 1.6rem;
   font-weight: normal;
@@ -1043,11 +1055,6 @@ body {
   margin-top: 5px;
 }
 .work-description img {
-  width: 25px;
+  width: 20px;
   margin-left: 10px;
-}
-@media screen and (max-width: 1024px) {
-  .work-description img {
-    width: 20px;
-  }
 }
