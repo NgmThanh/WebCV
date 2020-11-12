@@ -156,8 +156,13 @@ body {
   background: var(--material-lighter);
   color: var(--font-grey);
   font-weight: normal;
-  padding: 2vh;
+  padding: 1vh;
   transition: 0.5s all ease;
+}
+@media screen and (max-width: 650px) {
+  body {
+    padding: 5px;
+  }
 }
 
 .light-page {
@@ -203,14 +208,6 @@ body {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: flex-start;
-}
-@media screen and (max-width: 650px) {
-  .main-container {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    align-items: center;
-  }
 }
 .main-container .top-container {
   width: 100%;
