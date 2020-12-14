@@ -271,6 +271,8 @@ body {
     
     .bot-container {
         width: 100%;
+        background: var(--material-color);
+
         @include flex(row nowrap, space-between, flex-start);
 
         @include mobile-screen {
@@ -280,7 +282,7 @@ body {
         // area for all informations
         .info-container {
             width: 35%;
-
+            
             @include small-screen {
                 width: 40%;
             }
@@ -300,6 +302,7 @@ body {
             width: 65%;
             padding-bottom: 50px;
             transition: 0.5s all ease;
+            background: var(--background-light);
 
             @include small-screen {
                 width: 60%;
@@ -763,7 +766,7 @@ body {
 
     &-description {
         width: 100%;
-        padding: 30px 0 30px 35px;
+        padding: 30px 0 30px 30px;
         border-left: 3px solid var(--font-dark);
         border-bottom: 3px solid var(--font-dark);
         border-bottom-right-radius: 2px;
@@ -809,9 +812,13 @@ body {
             margin: 2px 2px 2px 0px;
         }
         // description of experience
-        p {
-            @include font(1.6rem, normal, var(--font-dark), 1px, none);
-            margin-top: 5px;
+        ul {
+            @include font(1.6rem, normal, var(--font-dark), 0.5px, none);
+            margin-top: 12px;
+            margin-left: 20px;
+            li {
+                margin-top: 5px;
+            }
         }
         // icon redirection
         img {
