@@ -260,6 +260,7 @@ body {
 }
 .main-container .bot-container {
   width: 100%;
+  background: var(--material-color);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -294,6 +295,7 @@ body {
   width: 65%;
   padding-bottom: 50px;
   transition: 0.5s all ease;
+  background: var(--background-light);
 }
 @media screen and (max-width: 1024px) {
   .main-container .bot-container .work-section {
@@ -977,7 +979,7 @@ body {
 }
 .work-description {
   width: 100%;
-  padding: 30px 0 30px 35px;
+  padding: 30px 0 30px 30px;
   border-left: 3px solid var(--font-dark);
   border-bottom: 3px solid var(--font-dark);
   border-bottom-right-radius: 2px;
@@ -1046,12 +1048,16 @@ body {
   padding: 5px 7px;
   margin: 2px 2px 2px 0px;
 }
-.work-description p {
+.work-description ul {
   font-size: 1.6rem;
   font-weight: normal;
   color: var(--font-dark);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: none;
+  margin-top: 12px;
+  margin-left: 20px;
+}
+.work-description ul li {
   margin-top: 5px;
 }
 .work-description img {
