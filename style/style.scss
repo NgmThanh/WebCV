@@ -224,6 +224,10 @@ body {
     }
 }
 
+.bold-word {
+    font-weight: 600;
+}
+
 .main-container {
     margin: auto;
     max-width: 1400px;
@@ -611,6 +615,7 @@ body {
     }
     // HOBBIES
     .hobby__field {
+        @include flex(nowrap, space-between, flex-start);
         padding: 15px 0 15px 0;
     }
 }

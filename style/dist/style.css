@@ -200,6 +200,10 @@ body {
   text-shadow: 1px 1px var(--shadow-dark);
 }
 
+.bold-word {
+  font-weight: 600;
+}
+
 .main-container {
   margin: auto;
   max-width: 1400px;
@@ -772,6 +776,10 @@ body {
   display: none;
 }
 .left-info-inner .hobby__field, .left-info-inner a .hobby__field {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 15px 0 15px 0;
 }
 
